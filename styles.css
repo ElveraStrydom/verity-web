@@ -192,6 +192,9 @@ h3 { font-size: 1.25rem; }
 .nav-links { display: flex; align-items: center; gap: var(--s-lg); }
 .nav-links a { color: var(--text-second); font-size: 0.95rem; }
 .nav-links a:hover { color: var(--text-primary); text-decoration: none; }
+/* the primary CTA in the nav must keep its white-on-plum styling — beat `.nav-links a` specificity */
+.nav-links a.btn-primary { color: var(--ink-on-primary); }
+.nav-links a.btn-primary:hover { color: var(--ink-on-primary); }
 .brand { display: inline-flex; align-items: center; gap: 10px; }
 .brand:hover { text-decoration: none; }
 .wordmark {
