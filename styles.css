@@ -185,8 +185,7 @@ h3 { font-size: 1.25rem; }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(180%) blur(12px);
+  background: var(--bg); /* fully opaque so the CTA band never bleeds through the plum nav button */
   border-bottom: 1px solid var(--separator);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
