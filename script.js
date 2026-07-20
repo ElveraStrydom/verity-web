@@ -98,4 +98,23 @@
 
   wireForm("waitlistTop", "emailTop", "msgTop");
   wireForm("waitlistBottom", "emailBottom", "msgBottom");
+
+  // --- "Coming soon" store badges -----------------------------------------
+  // The apps aren't published yet, so the App Store / Google Play badges send
+  // the user to the nearest waitlist form (the hero one) and focus the email
+  // field, converting store intent into a signup with minimal travel. The
+  // href="#waitlistTop" is the no-JS fallback. Swap these for real store URLs
+  // once the apps ship (WS13/WS14) and remove this handler.
+  var badges = document.querySelectorAll("[data-waitlist]");
+  var emailTop = document.getElementById("emailTop");
+  Array.prototype.forEach.call(badges, function (badge) {
+    badge.addEventListener("click", function (e) {
+      if (!emailTop) return; // fall back to the anchor jump
+      e.preventDefault();
+      emailTop.scrollIntoView({ behavior: "smooth", block: "center" });
+      emailTop.focus({ preventScroll: true });
+      emailTop.classList.add("field--pulse");
+      setTimeout(function () { emailTop.classList.remove("field--pulse"); }, 1200);
+    });
+  });
 })();

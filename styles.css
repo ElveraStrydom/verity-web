@@ -223,6 +223,12 @@ h3 { font-size: 1.25rem; }
 }
 .field::placeholder { color: var(--text-light); }
 .field:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; }
+/* brief highlight when a "Coming soon" store badge sends focus to this field */
+.field--pulse { animation: field-pulse 1.2s ease-out; }
+@keyframes field-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 109, 119, 0.45); }
+  100% { box-shadow: 0 0 0 12px rgba(0, 109, 119, 0); }
+}
 .form-note { margin-top: var(--s-sm); }
 .form-msg { margin-top: var(--s-sm); font-size: 0.9rem; min-height: 1.2em; }
 .form-msg[data-state="ok"] { color: var(--success); }
