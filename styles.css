@@ -446,6 +446,21 @@ h3 { font-size: 1.25rem; }
 .footer-links a { color: var(--text-second); font-size: 0.9rem; }
 .footer-brand { max-width: 320px; }
 .footer-brand p { color: var(--text-second); font-size: 0.9rem; margin: var(--s-sm) 0 0; }
+.footer-social { margin-top: var(--s-md); }
+.social-link {
+  display: inline-flex; align-items: center; gap: var(--s-sm);
+  min-height: 44px; padding: 8px 14px 8px 12px;
+  border-radius: var(--r-pill); border: 1.5px solid var(--separator);
+  color: var(--plum); font-size: 0.9rem; font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.social-link svg { flex-shrink: 0; }
+.social-link:hover { background: var(--plum-light); border-color: var(--plum-mid); transform: translateY(-1px); }
+.social-link:focus-visible { outline: 3px solid var(--plum-mid); outline-offset: 2px; }
+@media (prefers-color-scheme: dark) {
+  .social-link { color: var(--eyebrow-plum); }
+  .social-link:hover { background: var(--surface-high); }
+}
 .footer-bottom { margin-top: var(--s-lg); padding-top: var(--s-lg); border-top: 1px solid var(--separator); color: var(--text-light); font-size: 0.85rem; }
 
 /* ---------- Legal (policy) pages ---------- */
