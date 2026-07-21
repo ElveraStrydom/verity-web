@@ -502,7 +502,7 @@ h3 { font-size: 1.25rem; }
      bottom stays just below her shoulders — no chin/head clipping.
      (Desktop keeps its 4/5 portrait crop.) */
   .meet-media { aspect-ratio: 4 / 3; }
-  .meet-media img { object-position: center 20%; }
+  .meet-media img { object-position: center 6%; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .cards, .steps { grid-template-columns: 1fr; }
   .legal-grid { grid-template-columns: 1fr; }
