@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="styles.css?v=20260721b" />
+  <link rel="stylesheet" href="styles.css?v=20260721c" />
 
   <!-- Open Graph / social -->
   <meta property="og:title" content="Verity — Your body's truth, in your hands" />
@@ -88,11 +88,48 @@
           </div>
         </div>
 
-        <!-- The app itself: a real Verity home screen -->
+        <!-- The app itself: a faithful light-mode Verity home screen -->
         <div class="hero-art">
-          <div class="phone">
-            <img class="phone-shot" src="assets/app-home.webp" width="560" height="1138"
-                 alt="The Verity app home screen: a warm 'Good afternoon' greeting, a sleep insight from Vera, quick stats for sleep, energy and days on HRT, a recent energy trend, and a note from Vera — with Home, Log, Trends and Me navigation." />
+          <div class="phone" role="img" aria-label="The Verity app home screen: a warm 'Good afternoon, Amara' greeting with a sleep insight; quick stats showing 7 hours sleep, energy 8 out of 10, and week 13 on HRT; a rising 14-day average-energy chart; a note from Vera that hot flushes have eased since her HRT change; and Home, Log, Trends and Me navigation.">
+          <div class="pscreen" aria-hidden="true">
+            <div class="ps-greetcard">
+              <div class="ps-hi">Good afternoon,<br />Amara</div>
+              <p class="ps-sub">Your sleep's averaged 7 hours this week — a steady base for better energy.</p>
+            </div>
+            <div class="ps-logrow">
+              <span class="ps-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span class="ps-logtext">Logged today · <b>slept well, energy up</b></span>
+            </div>
+            <div class="ps-stats">
+              <div class="ps-stat ps-lav"><b>7h</b><span>Sleep last night</span></div>
+              <div class="ps-stat ps-mint"><b>8<i>/10</i></b><span>Energy today</span></div>
+              <div class="ps-stat ps-blush"><b>Wk 13</b><span>On HRT</span></div>
+            </div>
+            <div class="ps-card ps-trend">
+              <div class="ps-trend-top">
+                <span class="ps-eyebrow">Average energy · 14 days</span>
+                <span class="ps-trend-up">↗ steadier</span>
+              </div>
+              <div class="ps-spark">
+                <span style="height:34%"></span><span style="height:40%"></span><span style="height:37%"></span><span style="height:46%"></span><span style="height:43%"></span><span style="height:52%"></span><span style="height:49%"></span><span style="height:58%"></span><span style="height:55%"></span><span style="height:66%"></span><span style="height:62%"></span><span style="height:73%"></span><span style="height:78%"></span><span style="height:88%"></span>
+              </div>
+            </div>
+            <div class="ps-card ps-vera">
+              <span class="ps-vera-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Vera says</span>
+              <p>Your hot flushes have eased since your HRT change two weeks ago — a good sign it's settling in.</p>
+            </div>
+            <div class="ps-card ps-report">
+              <span class="ps-report-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Doctor report ready</span>
+              <p>Three months of trends — one tap to share at your appointment.</p>
+            </div>
+            <nav class="ps-nav">
+              <span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Log</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Trends</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg>Me</span>
+            </nav>
+          </div>
+          <div class="ps-fab" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
           </div>
         </div>
       </div>

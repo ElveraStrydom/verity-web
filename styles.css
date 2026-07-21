@@ -237,7 +237,7 @@ h3 { font-size: 1.25rem; }
 /* Phone mock */
 .hero-art { display: flex; justify-content: center; }
 .phone {
-  width: min(300px, 78%); aspect-ratio: 300 / 610;
+  width: min(300px, 100%); aspect-ratio: 300 / 610;
   background: var(--surface-high);
   border: 10px solid #14101c; border-radius: 44px;
   box-shadow: var(--shadow-lift); overflow: hidden; position: relative;
@@ -258,8 +258,54 @@ h3 { font-size: 1.25rem; }
 .mini-blush { background: var(--fill-blush); }
 .spark { display: flex; align-items: flex-end; gap: 5px; height: 46px; margin-top: 6px; }
 .spark span { flex: 1; background: var(--plum); border-radius: 3px 3px 0 0; opacity: 0.85; }
-/* real app screenshot inside the phone frame */
-.phone-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+
+/* Faithful light-mode app home screen (fixed light palette — stays light in dark mode) */
+.pscreen {
+  position: absolute; inset: 0; background: #FBF9FE;
+  display: flex; flex-direction: column; padding: 16px 13px 0; gap: 10px; overflow: hidden;
+}
+.ps-greetcard { background: #F2E8F7; border-radius: 15px; padding: 13px 14px; }
+.ps-report { background: #E0F5F7; }
+.ps-report-h { display: inline-flex; align-items: center; gap: 5px; font-size: 0.6rem; font-weight: 600; color: #006D77; }
+.ps-report-h svg { width: 12px; height: 12px; }
+.ps-report p { margin: 5px 0 0; font-size: 0.62rem; line-height: 1.35; color: #234A4E; }
+.ps-hi { font-size: 1.16rem; font-weight: 600; line-height: 1.12; letter-spacing: -0.01em; color: #2A2233; }
+.ps-sub { margin: 6px 0 0; font-size: 0.66rem; line-height: 1.35; color: #4A4152; }
+.ps-logrow { display: flex; align-items: center; gap: 7px; background: #fff; border: 1px solid #ECE3F3; border-radius: 11px; padding: 8px 10px; }
+.ps-check { flex: none; width: 16px; height: 16px; border-radius: 50%; background: #E0F5F7; color: #006D77; display: grid; place-items: center; }
+.ps-check svg { width: 10px; height: 10px; }
+.ps-logtext { font-size: 0.6rem; color: #6B6070; }
+.ps-logtext b { color: #3A3244; font-weight: 600; }
+.ps-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ps-stat { border-radius: 12px; padding: 9px 8px 10px; }
+.ps-stat b { display: block; font-size: 1.15rem; font-weight: 600; line-height: 1; }
+.ps-stat b i { font-size: 0.58rem; font-weight: 500; font-style: normal; opacity: 0.65; }
+.ps-stat span { display: block; margin-top: 4px; font-size: 0.52rem; line-height: 1.15; color: #6B6070; }
+.ps-lav { background: #F2E8F7; } .ps-lav b { color: #6B2D8B; }
+.ps-mint { background: #E0F5F7; } .ps-mint b { color: #006D77; }
+.ps-blush { background: #FCE4EC; } .ps-blush b { color: #C0607A; }
+.ps-card { background: #F6F1FB; border-radius: 14px; padding: 10px 12px; }
+.ps-trend-top { display: flex; justify-content: space-between; align-items: center; }
+.ps-eyebrow { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.06em; color: #6B6070; font-weight: 500; }
+.ps-trend-up { font-size: 0.56rem; font-weight: 500; color: #2E7D32; }
+.ps-spark { display: flex; align-items: flex-end; gap: 3px; height: 36px; margin-top: 8px; }
+.ps-spark span { flex: 1; background: linear-gradient(to top, #9B5DBF, #6B2D8B); border-radius: 2px 2px 0 0; }
+.ps-vera { background: #F2E8F7; }
+.ps-vera-h { display: inline-flex; align-items: center; gap: 5px; font-size: 0.6rem; font-weight: 600; color: #6B2D8B; }
+.ps-vera-h svg { width: 12px; height: 12px; }
+.ps-vera p { margin: 5px 0 0; font-size: 0.63rem; line-height: 1.35; color: #3A3244; }
+.ps-nav {
+  margin-top: auto; display: flex; justify-content: space-between;
+  padding: 8px 8px 10px; border-top: 1px solid #ECE3F3; background: #fff;
+}
+.ps-nav span { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 0.5rem; color: #9086A0; }
+.ps-nav span.on { color: #6B2D8B; }
+.ps-nav svg { width: 15px; height: 15px; }
+.ps-fab {
+  position: absolute; right: 13px; bottom: 42px; width: 36px; height: 36px; border-radius: 50%;
+  background: #6B2D8B; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(107, 45, 139, 0.4);
+}
+.ps-fab svg { width: 18px; height: 18px; color: #fff; }
 
 /* ---------- Brand mark (header/footer logo) ---------- */
 .brand-mark { display: block; border-radius: 7px; }
