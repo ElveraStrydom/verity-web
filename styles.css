@@ -497,7 +497,12 @@ h3 { font-size: 1.25rem; }
   .hero-copy { display: contents; }
   .hero-art { order: 1; margin-top: var(--s-lg); }
   .hero-badges { order: 2; margin-top: var(--s-md); }
-  .meet-media { aspect-ratio: 16 / 10; }
+  /* Give the frame a little more height (4/3 vs the old 16/10, ~43px taller)
+     and bias the crop upward so Vera's full hair + headroom show while the
+     bottom stays just below her shoulders — no chin/head clipping.
+     (Desktop keeps its 4/5 portrait crop.) */
+  .meet-media { aspect-ratio: 4 / 3; }
+  .meet-media img { object-position: center 20%; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .cards, .steps { grid-template-columns: 1fr; }
   .legal-grid { grid-template-columns: 1fr; }
