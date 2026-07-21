@@ -258,27 +258,11 @@ h3 { font-size: 1.25rem; }
 .mini-blush { background: var(--fill-blush); }
 .spark { display: flex; align-items: flex-end; gap: 5px; height: 46px; margin-top: 6px; }
 .spark span { flex: 1; background: var(--plum); border-radius: 3px 3px 0 0; opacity: 0.85; }
+/* real app screenshot inside the phone frame */
+.phone-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 
 /* ---------- Brand mark (header/footer logo) ---------- */
 .brand-mark { display: block; border-radius: 7px; }
-
-/* ---------- Vera in the hero ---------- */
-.vera-hero { position: relative; width: min(430px, 94%); }
-.vera-hero-img {
-  width: 100%; height: auto; display: block;
-  border-radius: var(--r-card); box-shadow: var(--shadow-lift);
-}
-.hero-insight {
-  position: absolute; left: 14px; bottom: 18px; max-width: 250px;
-  background: var(--surface-high); border: 1px solid var(--separator);
-  border-radius: var(--r-card); box-shadow: var(--shadow-lift); padding: var(--s-md);
-}
-.hi-eyebrow {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--plum);
-}
-.hero-insight p { margin: 6px 0 0; font-size: 0.85rem; line-height: 1.4; color: var(--text-second); }
 
 /* ---------- Meet Vera ---------- */
 .meet-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--s-xxl); align-items: center; }
@@ -286,7 +270,7 @@ h3 { font-size: 1.25rem; }
   border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-lift);
   aspect-ratio: 4 / 5; background: var(--fill-blush);
 }
-.meet-media img { width: 100%; height: 100%; object-fit: cover; object-position: left center; display: block; }
+.meet-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
 .meet-copy .lede { max-width: 40ch; }
 .ask-vera-chip {
   display: flex; gap: var(--s-md); align-items: center; margin-top: var(--s-lg);
