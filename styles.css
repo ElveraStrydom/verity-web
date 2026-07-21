@@ -46,6 +46,10 @@
   --ink-on-fill: #212121;
   --scrim: rgba(0, 0, 0, 0.5);
 
+  /* Eyebrow labels — mode-aware so they clear AA on both backgrounds */
+  --eyebrow-plum: #6B2D8B;
+  --eyebrow-teal: #006D77;
+
   /* Radius */
   --r-sm: 8px;
   --r-md: 12px;
@@ -84,6 +88,8 @@
     --text-light: #9C8CAC;
     --separator: #2A1E38;
     --border: #3D2E50;
+    --eyebrow-plum: #C9A6E0;
+    --eyebrow-teal: #4DA8B0;
     --success-bg: #20321F;
     --error-bg: #3A1E20;
     --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -159,9 +165,10 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
 h3 { font-size: 1.25rem; }
 .eyebrow {
   font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--plum);
+  text-transform: uppercase; color: var(--eyebrow-plum);
   display: inline-block; margin-bottom: var(--s-sm);
 }
+.eyebrow-teal { color: var(--eyebrow-teal); }
 .lede { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--text-second); }
 .muted { color: var(--text-second); }
 .tiny { font-size: 0.8125rem; color: var(--text-light); }
@@ -419,6 +426,10 @@ h3 { font-size: 1.25rem; }
   margin-left: 4px; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em;
   background: var(--fill-lavender); color: var(--plum); padding: 3px 6px; border-radius: var(--r-pill);
 }
+@media (prefers-color-scheme: dark) {
+  .store-badge small { color: var(--text-second); }
+  .store-badge .soon { background: rgba(201, 166, 224, 0.16); color: var(--eyebrow-plum); }
+}
 
 /* ---------- Disclaimer strip ---------- */
 .disclaimer {
@@ -477,7 +488,15 @@ h3 { font-size: 1.25rem; }
 @media (max-width: 900px) {
   :root { --section-gap: 68px; }
   .hero-grid, .split, .meet-grid { grid-template-columns: 1fr; gap: var(--s-xl); }
-  .hero-art { order: -1; }
+  /* Mobile hero: lead with the pitch, not the phone.
+     Flatten the copy column into the flex flow so the phone can sit
+     between the sign-up form and the store badges:
+     headline -> lede -> waitlist -> phone -> badges. */
+  .hero { padding-top: var(--s-lg); padding-bottom: var(--s-xl); }
+  .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .hero-copy { display: contents; }
+  .hero-art { order: 1; margin-top: var(--s-lg); }
+  .hero-badges { order: 2; margin-top: var(--s-md); }
   .meet-media { aspect-ratio: 16 / 10; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .cards, .steps { grid-template-columns: 1fr; }
