@@ -6,9 +6,12 @@
   <title>Verity — Your body's truth, in your hands</title>
   <meta name="description" content="Verity is a warm, private hormonal-health companion for women at every life stage — cycle, symptom, sleep and HRT tracking, clear trends, and clinician-reviewed guidance from Vera. Join the waitlist." />
   <meta name="theme-color" content="#6B2D8B" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="styles.css?v=20260720b" />
+  <link rel="stylesheet" href="styles.css?v=20260721" />
 
   <!-- Open Graph / social -->
   <meta property="og:title" content="Verity — Your body's truth, in your hands" />
@@ -35,17 +38,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="/" aria-label="Verity home">
-        <svg width="30" height="30" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="vmark" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#6B2D8B" />
-              <stop offset="1" stop-color="#9B5DBF" />
-            </linearGradient>
-          </defs>
-          <path d="M9 36 L24 12 L39 36" fill="none" stroke="url(#vmark)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M18 39 A7 7 0 0 1 30 39" fill="none" stroke="#E8A0BF" stroke-width="3.4" stroke-linecap="round" />
-          <circle cx="24" cy="30.5" r="2.6" fill="#006D77" />
-        </svg>
+        <img class="brand-mark" src="favicon-96.png" width="30" height="30" alt="" />
         <span class="wordmark">Verity</span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -95,26 +88,14 @@
           </div>
         </div>
 
-        <!-- Brand illustration: stylised app screen -->
+        <!-- Vera, the guide — with one app insight card for product context -->
         <div class="hero-art">
-          <div class="phone" role="img" aria-label="A preview of the Verity app showing a warm greeting, a wellbeing chip, and cards for insights, HRT progress and a symptom trend.">
-            <div class="phone-screen">
-              <span class="chip">Good morning, you 🌿</span>
-              <div class="phone-greet">Today feels a little brighter.</div>
-              <div class="mini-card mini-lav">
-                <h4>Vera notices</h4>
-                <p>Your sleep has been steadier this week — energy tends to follow.</p>
-              </div>
-              <div class="mini-card mini-mint">
-                <h4>HRT · day 26</h4>
-                <p>Hot flushes down vs. the week before your change.</p>
-              </div>
-              <div class="mini-card mini-blush">
-                <h4>Mood this fortnight</h4>
-                <div class="spark" aria-hidden="true">
-                  <span style="height:40%"></span><span style="height:55%"></span><span style="height:48%"></span><span style="height:70%"></span><span style="height:62%"></span><span style="height:80%"></span><span style="height:74%"></span>
-                </div>
-              </div>
+          <div class="vera-hero">
+            <img class="vera-hero-img" src="assets/vera-hero.webp" width="1040" height="1299"
+                 alt="Vera, Verity's warm midlife health guide — a woman in her fifties with a silver-streaked bob, smiling gently in a plum cardigan over a teal top." />
+            <div class="hero-insight" aria-hidden="true">
+              <span class="hi-eyebrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18"/><circle cx="12" cy="12" r="3.5"/></svg> Vera notices</span>
+              <p>Your sleep's been steadier this week — energy tends to follow.</p>
             </div>
           </div>
         </div>
@@ -184,6 +165,29 @@
             <h3>A report for your doctor</h3>
             <p>Export a clear summary to take to appointments — everything your clinician needs, nothing they don't.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Meet Vera ============ -->
+    <section id="meet-vera" class="meet" style="background:var(--surface);">
+      <div class="wrap meet-grid">
+        <div class="meet-media">
+          <img src="assets/vera-meet.webp" width="1600" height="1066" loading="lazy"
+               alt="Vera, Verity's guide — a warm woman in her fifties with a silver-streaked bob, in a plum cardigan over a teal V-neck, smiling gently." />
+        </div>
+        <div class="meet-copy">
+          <span class="eyebrow">Meet your guide</span>
+          <h2>Meet Vera</h2>
+          <p class="lede">She's walked through midlife herself — and she knows the science. So Vera meets you as a knowing friend, never a clinician.</p>
+          <p class="muted">Every answer she gives is clinician-reviewed, honest about what the evidence does and doesn't say, and always points you back to your doctor for medical decisions. Vera helps you understand your body, notice your patterns, and walk into appointments prepared.</p>
+          <div class="ask-vera-chip">
+            <img class="avatar" src="assets/vera-avatar.webp" width="52" height="52" alt="" />
+            <div>
+              <strong>Ask Vera</strong>
+              <span>Clear, caveated answers to the questions women actually ask — free, and every one clinician-reviewed.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -368,11 +372,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="/" aria-label="Verity home">
-            <svg width="26" height="26" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
-              <path d="M9 36 L24 12 L39 36" fill="none" stroke="#9B5DBF" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M18 39 A7 7 0 0 1 30 39" fill="none" stroke="#E8A0BF" stroke-width="3.4" stroke-linecap="round" />
-              <circle cx="24" cy="30.5" r="2.6" fill="#4DA8B0" />
-            </svg>
+            <img class="brand-mark" src="favicon-96.png" width="26" height="26" alt="" />
             <span class="wordmark">Verity</span>
           </a>
           <p>Your body's truth, in your hands. A hormonal-health companion for every life stage.</p>

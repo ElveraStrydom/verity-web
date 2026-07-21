@@ -259,6 +259,44 @@ h3 { font-size: 1.25rem; }
 .spark { display: flex; align-items: flex-end; gap: 5px; height: 46px; margin-top: 6px; }
 .spark span { flex: 1; background: var(--plum); border-radius: 3px 3px 0 0; opacity: 0.85; }
 
+/* ---------- Brand mark (header/footer logo) ---------- */
+.brand-mark { display: block; border-radius: 7px; }
+
+/* ---------- Vera in the hero ---------- */
+.vera-hero { position: relative; width: min(430px, 94%); }
+.vera-hero-img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--r-card); box-shadow: var(--shadow-lift);
+}
+.hero-insight {
+  position: absolute; left: 14px; bottom: 18px; max-width: 250px;
+  background: var(--surface-high); border: 1px solid var(--separator);
+  border-radius: var(--r-card); box-shadow: var(--shadow-lift); padding: var(--s-md);
+}
+.hi-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--plum);
+}
+.hero-insight p { margin: 6px 0 0; font-size: 0.85rem; line-height: 1.4; color: var(--text-second); }
+
+/* ---------- Meet Vera ---------- */
+.meet-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--s-xxl); align-items: center; }
+.meet-media {
+  border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-lift);
+  aspect-ratio: 4 / 5; background: var(--fill-blush);
+}
+.meet-media img { width: 100%; height: 100%; object-fit: cover; object-position: left center; display: block; }
+.meet-copy .lede { max-width: 40ch; }
+.ask-vera-chip {
+  display: flex; gap: var(--s-md); align-items: center; margin-top: var(--s-lg);
+  background: var(--surface-high); border: 1px solid var(--separator);
+  border-radius: var(--r-card); padding: var(--s-md); box-shadow: var(--shadow-card);
+}
+.ask-vera-chip .avatar { width: 52px; height: 52px; border-radius: 50%; flex: none; }
+.ask-vera-chip strong { display: block; font-weight: 500; }
+.ask-vera-chip span { font-size: 0.9rem; color: var(--text-second); }
+
 /* ---------- Trust bar ---------- */
 .trustbar { background: var(--surface); border-top: 1px solid var(--separator); border-bottom: 1px solid var(--separator); }
 .trustbar .wrap { padding-top: var(--s-xl); padding-bottom: var(--s-xl); }
@@ -408,8 +446,9 @@ h3 { font-size: 1.25rem; }
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   :root { --section-gap: 68px; }
-  .hero-grid, .split { grid-template-columns: 1fr; gap: var(--s-xl); }
+  .hero-grid, .split, .meet-grid { grid-template-columns: 1fr; gap: var(--s-xl); }
   .hero-art { order: -1; }
+  .meet-media { aspect-ratio: 16 / 10; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .cards, .steps { grid-template-columns: 1fr; }
   .legal-grid { grid-template-columns: 1fr; }
