@@ -3,11 +3,11 @@
   "use strict";
 
   // --- Config: where the waitlist posts. ----------------------------------
-  // Mirrors the livo-web pattern (a tiny email-capture endpoint on our own
-  // VPS). Until Pierre wires the live URL, leave WAITLIST_ENDPOINT empty and
-  // the form falls back to a mailto: so no signup is ever lost.
-  var WAITLIST_ENDPOINT = ""; // e.g. "https://api.verity.app/signup"
-  var FALLBACK_EMAIL = "hello@verity.app";
+  // FormSubmit AJAX → delivers each signup to hello@veritywomen.com (Cloudflare
+  // Email Routing forwards to the team inbox). First-ever submit from this
+  // endpoint asks the inbox owner to confirm once; after that it stores + emails.
+  var WAITLIST_ENDPOINT = "https://formsubmit.co/ajax/hello@veritywomen.com";
+  var FALLBACK_EMAIL = "hello@veritywomen.com";
 
   // --- Year in footer -----------------------------------------------------
   var y = document.getElementById("year");
@@ -76,11 +76,26 @@
 
       fetch(WAITLIST_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email, source: "website" })
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          source: "website",
+          _subject: "Verity waitlist signup",
+          _template: "table",
+          _captcha: "false",
+          _honey: ""
+        })
       })
         .then(function (r) {
-          if (!r.ok) throw new Error("bad status " + r.status);
+          return r.json().then(function (data) {
+            if (!r.ok) throw new Error((data && data.message) || "bad status " + r.status);
+            return data;
+          });
+        })
+        .then(function () {
           say("You're on the list — we'll be in touch. 🌿", "ok");
           form.reset();
         })
