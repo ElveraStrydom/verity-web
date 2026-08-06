@@ -237,9 +237,51 @@ h3 { font-size: 1.25rem; }
   100% { box-shadow: 0 0 0 12px rgba(0, 109, 119, 0); }
 }
 .form-note { margin-top: var(--s-sm); }
-.form-msg { margin-top: var(--s-sm); font-size: 0.9rem; min-height: 1.2em; }
-.form-msg[data-state="ok"] { color: var(--success); }
-.form-msg[data-state="err"] { color: var(--error); }
+/* Waitlist status — readable at arm's length; not tiny green text */
+.form-msg {
+  margin-top: var(--s-sm);
+  min-height: 1.35em;
+  font-size: 1rem; /* body = 16 */
+  line-height: 1.4;
+  font-weight: 500;
+}
+.form-msg[data-state="ok"],
+.form-msg[data-state="err"],
+.form-msg[data-state="pending"] {
+  padding: 12px 16px;
+  border-radius: var(--r-md, 12px);
+}
+.form-msg[data-state="ok"] {
+  color: var(--success);
+  background: var(--success-bg);
+  border: 1px solid var(--success);
+}
+.form-msg[data-state="err"] {
+  color: var(--error);
+  background: var(--error-bg, #FDECEA);
+  border: 1px solid var(--error);
+}
+.form-msg[data-state="pending"] {
+  color: var(--text-primary);
+  background: var(--surface-high);
+  border: 1px solid var(--border);
+}
+/* Dark CTA band: keep success/error banners readable on plum */
+.cta-band .form-msg[data-state="ok"] {
+  color: #0d3b12;
+  background: #e8f5e9;
+  border-color: #2e7d32;
+}
+.cta-band .form-msg[data-state="err"] {
+  color: #5c1010;
+  background: #fdecea;
+  border-color: #c62828;
+}
+.cta-band .form-msg[data-state="pending"] {
+  color: #1a1224;
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 255, 255, 0.5);
+}
 
 /* Phone mock */
 .hero-art { display: flex; justify-content: center; }

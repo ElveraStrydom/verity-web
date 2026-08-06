@@ -39,11 +39,22 @@
     if (!form) return;
     var input = document.getElementById(inputId);
     var msg = document.getElementById(msgId);
+    var defaultBtnLabel = "Join the waitlist";
 
     function say(text, state) {
       if (!msg) return;
       msg.textContent = text;
-      msg.setAttribute("data-state", state);
+      msg.setAttribute("data-state", state || "");
+      // Scroll status into view so it isn't missed below the fold / keyboard
+      try {
+        msg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      } catch (e) { /* ignore */ }
+    }
+
+    function setButton(btn, label, disabled) {
+      if (!btn) return;
+      btn.textContent = label;
+      btn.disabled = !!disabled;
     }
 
     form.addEventListener("submit", function (e) {
@@ -57,19 +68,16 @@
       }
 
       var btn = form.querySelector('button[type="submit"]');
-      if (btn) btn.disabled = true;
-      say("Adding you to the list…", "");
+      setButton(btn, "Adding you…", true);
+      say("Adding you to the list…", "pending");
 
       if (!WAITLIST_ENDPOINT) {
-        // No backend yet — hand off to the user's mail client so the signup
-        // still reaches us. Remove once WAITLIST_ENDPOINT is set.
         say("Almost there — your email app will open to confirm. Thank you!", "ok");
         window.location.href =
           "mailto:" + FALLBACK_EMAIL +
           "?subject=" + encodeURIComponent("Join the Verity waitlist") +
           "&body=" + encodeURIComponent("Please add me to the Verity waitlist: " + email);
-        if (btn) btn.disabled = false;
-        form.reset();
+        setButton(btn, defaultBtnLabel, false);
         return;
       }
 
@@ -89,20 +97,37 @@
         })
         .then(function (data) {
           if (data && data.already) {
-            say("You're already on the list — we'll be in touch. 🌿", "ok");
+            say(
+              "You're already on the waitlist — we'll email you at launch. No need to join again.",
+              "ok"
+            );
+            setButton(btn, "Already on the list", false);
+          } else if (data && data.confirmationFailed) {
+            say(
+              "You're on the list — we saved your email. The confirmation email may be delayed; check spam or write to " +
+                FALLBACK_EMAIL +
+                " if you need a hand.",
+              "ok"
+            );
+            setButton(btn, "You're on the list ✓", false);
           } else {
-            say("You're on the list — check your email for a note from us. 🌿", "ok");
+            say(
+              "You're on the list. Check your inbox for a note from hello@veritywomen.com (and spam, just in case).",
+              "ok"
+            );
+            setButton(btn, "You're on the list ✓", false);
           }
-          form.reset();
+          // Keep the email in the field so she can see what was captured
+          input.value = email;
+          input.readOnly = true;
         })
         .catch(function () {
           say(
             "Something went wrong. Please email " + FALLBACK_EMAIL + " and we'll add you.",
             "err"
           );
-        })
-        .finally(function () {
-          if (btn) btn.disabled = false;
+          setButton(btn, defaultBtnLabel, false);
+          input.readOnly = false;
         });
     });
   }
