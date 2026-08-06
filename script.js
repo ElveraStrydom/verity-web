@@ -5,7 +5,7 @@
   // --- Config: where the waitlist posts. ----------------------------------
   // Cloudflare Worker (Resend): stores in KV + sends branded confirmation from
   // hello@veritywomen.com. Team notify also goes to hello@ (Email Routing → Gmail).
-  var WAITLIST_ENDPOINT = "https://verity-waitlist.elveras.workers.dev/signup";
+  var WAITLIST_ENDPOINT = "https://waitlist.veritywomen.com/signup";
   var FALLBACK_EMAIL = "hello@veritywomen.com";
 
   // --- Year in footer -----------------------------------------------------
