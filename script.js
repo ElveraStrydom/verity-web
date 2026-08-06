@@ -3,10 +3,9 @@
   "use strict";
 
   // --- Config: where the waitlist posts. ----------------------------------
-  // FormSubmit AJAX → delivers each signup to hello@veritywomen.com (Cloudflare
-  // Email Routing forwards to the team inbox). First-ever submit from this
-  // endpoint asks the inbox owner to confirm once; after that it stores + emails.
-  var WAITLIST_ENDPOINT = "https://formsubmit.co/ajax/hello@veritywomen.com";
+  // Cloudflare Worker (Resend): stores in KV + sends branded confirmation from
+  // hello@veritywomen.com. Team notify also goes to hello@ (Email Routing → Gmail).
+  var WAITLIST_ENDPOINT = "https://verity-waitlist.elveras.workers.dev/signup";
   var FALLBACK_EMAIL = "hello@veritywomen.com";
 
   // --- Year in footer -----------------------------------------------------
@@ -80,23 +79,20 @@
           "Content-Type": "application/json",
           Accept: "application/json"
         },
-        body: JSON.stringify({
-          email: email,
-          source: "website",
-          _subject: "Verity waitlist signup",
-          _template: "table",
-          _captcha: "false",
-          _honey: ""
-        })
+        body: JSON.stringify({ email: email, source: "website" })
       })
         .then(function (r) {
           return r.json().then(function (data) {
-            if (!r.ok) throw new Error((data && data.message) || "bad status " + r.status);
+            if (!r.ok) throw new Error((data && data.error) || "bad status " + r.status);
             return data;
           });
         })
-        .then(function () {
-          say("You're on the list — we'll be in touch. 🌿", "ok");
+        .then(function (data) {
+          if (data && data.already) {
+            say("You're already on the list — we'll be in touch. 🌿", "ok");
+          } else {
+            say("You're on the list — check your email for a note from us. 🌿", "ok");
+          }
           form.reset();
         })
         .catch(function () {
