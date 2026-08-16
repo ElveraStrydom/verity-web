@@ -85,7 +85,7 @@
         <h2 id="s4">4. Who we share data with (sub-processors)</h2>
         <p>We share data only with the providers we need to run Verity, each bound by a written data-processing agreement and acting only on our instructions:</p>
         <ul>
-          <li><span class="fillin">[Hosting provider / our own server]</span> — cloud database, authentication and storage (self-hosted MongoDB). Hosting region: <span class="fillin">[EU (e.g. Frankfurt) or South Africa — state the actual region]</span>.</li>
+          <li><span class="fillin">[Hosting provider name]</span> — the server our database, sign-in and storage run on (MongoDB we run ourselves). Hosting region: the European Union (France).</li>
           <li><strong>Expo</strong> — push notifications.</li>
           <li><span class="fillin">[Email provider]</span> — transactional email (e.g. deletion confirmations).</li>
           <li><strong>AI provider (Verity Premium only)</strong> — powers Ask Vera AI; receives the question you ask, without identifying details, only on your consent. We will name the provider and its safeguards here before Premium launches.</li>
@@ -105,7 +105,7 @@
         <p>Depending on where you live: <strong>access</strong> (POPIA s23; GDPR Art 15), <strong>correction</strong> (s24; Art 16), <strong>deletion</strong> (Art 17; s24), <strong>portability</strong> — Verity offers a JSON export (Art 20), <strong>object/restrict</strong> (Arts 18, 21), <strong>withdraw consent</strong> (Art 7(3)), and <strong>complain</strong> to a regulator (SA Information Regulator, your EU supervisory authority, or the UK ICO). US residents (California CPRA; Washington My Health My Data Act) have additional rights over consumer-health data; we do not sell it. Contact <span class="fillin">[privacy@verity.app]</span>.</p>
 
         <h2 id="s7">7. Deleting your account</h2>
-        <p>In Settings → Privacy &amp; Data you can permanently delete your account. This hard-deletes your data from our systems (not a soft delete), removes your authentication record, deletes your on-device data, and sends a confirmation email. We complete deletion within 30 days. We keep only a minimal, timestamped, de-identified record that a deletion took place (a hashed request reference and date — no personal or health data), to meet our own legal obligations and prove the erasure was honoured. If you used support-person mode, observations about you are deleted or anonymised; tell us if you also want observations you authored removed.</p>
+        <p>In Settings → Privacy &amp; Data you can permanently delete your account. This hard-deletes your data from our systems (not a soft delete), removes your sign-in record, and deletes your on-device data. We complete deletion within 30 days. We keep only a minimal, timestamped, de-identified record that a deletion took place (a hashed request reference and date — no personal or health data), to meet our own legal obligations and prove the erasure was honoured. If you used support-person mode, observations about you are deleted or anonymised; tell us if you also want observations you authored removed.</p>
 
         <h2 id="s8">8. Data on your device</h2>
         <p>Verity stores some data locally for speed and offline use. That data sits in Verity's own storage area, which your phone's operating system keeps other apps out of; we do not add a separate layer of encryption on top of that today. Deleting the app removes local data, but a device backup (iCloud/Google) may retain a copy under that provider's terms. Use the in-app delete to remove server-side data.</p>
@@ -114,7 +114,8 @@
         <p><strong>Verity is for adults aged 18 and older.</strong> We do not knowingly collect data from anyone under 18. If we learn we have, we delete it.</p>
 
         <h2 id="s10">10. Security</h2>
-        <p>We protect your data with encryption in transit and at rest, per-user access controls so each user can only reach their own data, least-privilege access, and a documented incident-response process. No system is perfectly secure; if a breach affects you, we will notify you and the relevant regulator as the law requires.</p>
+        <p>Here is plainly what protects your data. Everything the app sends us travels over an encrypted connection, so it cannot be read on the way. You have to sign in to reach anything, our database requires its own password, and every request is checked against your account — so your records are only ever served to you. The server that holds them is in the European Union. We do not sell your data and we do not give it to advertisers.</p>
+        <p>And the limit, so you are not left guessing: once your data reaches our server it is stored as ordinary files — we do not add a separate layer of encryption on top of them today, in the same way we don't on your phone (section 8). The people who look after the server can therefore reach what is on it. If you would rather nothing left your phone at all, use Verity without an account; then nothing is sent to us. No system is perfectly secure; if a breach affects you, we will tell you and the relevant regulator, as the law requires.</p>
 
         <h2 id="s11">11. Changes and contact</h2>
         <p>We will update this policy as Verity evolves and tell you about material changes. Questions or requests: <span class="fillin">[privacy@verity.app]</span>. Postal: <span class="fillin">[address]</span>.</p>
