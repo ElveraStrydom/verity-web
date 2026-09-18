@@ -4,29 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — Verity</title>
-  <meta name="description" content="How Verity collects, uses, protects and lets you control your personal and health data. POPIA, GDPR and US state health-privacy compliant." />
+  <meta name="description" content="How Verity collects, uses and lets you control your personal and health data. Written for POPIA; GDPR-level baseline everywhere." />
   <meta name="theme-color" content="#6B2D8B" />
   <meta name="robots" content="index, follow" />
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="stylesheet" href="styles.css?v=20260721g" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/styles.css?v=20260915a" />
+  <!-- Google Analytics (site visits only; Measurement ID G-VDQ16S09LS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDQ16S09LS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('internal') === '1') {
+          document.cookie = 'verity_ga_internal=1;path=/;max-age=31536000;SameSite=Lax;Secure';
+        }
+        var isInternal = document.cookie.split(';').some(function (c) {
+          return c.trim().indexOf('verity_ga_internal=1') === 0;
+        });
+        gtag('config', 'G-VDQ16S09LS', isInternal ? { traffic_type: 'internal' } : {});
+      } catch (e) {
+        gtag('config', 'G-VDQ16S09LS');
+      }
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="index.html" aria-label="Verity home">
-        <img class="brand-mark" src="favicon-96.png" width="30" height="30" alt="" />
+      <a class="brand" href="/" aria-label="Verity home">
+        <img class="brand-mark" src="/favicon-96.png" width="30" height="30" alt="" />
         <span class="wordmark">Verity</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="index.html#features">Features</a>
-        <a href="index.html#privacy">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a class="btn btn-primary" href="index.html#waitlist" style="min-height:40px;padding:0 18px;">Join the waitlist</a>
+        <a href="/#features">Features</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a class="btn btn-primary" href="/#waitlist" style="min-height:40px;padding:0 18px;">Join the waitlist</a>
       </nav>
     </div>
   </header>
@@ -36,92 +57,236 @@
       <aside class="legal-toc" aria-label="On this page">
         <h2>On this page</h2>
         <ol>
-          <li><a href="#s1">Who we are</a></li>
-          <li><a href="#s2">The data we collect</a></li>
-          <li><a href="#s3">Why we use it</a></li>
-          <li><a href="#s4">Who we share it with</a></li>
-          <li><a href="#s5">How long we keep it</a></li>
-          <li><a href="#s6">Your rights</a></li>
-          <li><a href="#s7">Deleting your account</a></li>
-          <li><a href="#s8">Data on your device</a></li>
-          <li><a href="#s9">Children</a></li>
-          <li><a href="#s10">Security</a></li>
-          <li><a href="#s11">Changes &amp; contact</a></li>
+          <li><a href="#s1">1. Who we are</a></li>
+          <li><a href="#s2">2. What we collect</a></li>
+          <li><a href="#s3">3. Why we use your data</a></li>
+          <li><a href="#s4">4. Who we share data with</a></li>
+          <li><a href="#s5">5. How long we keep data</a></li>
+          <li><a href="#s6">6. Your rights</a></li>
+          <li><a href="#s7">7. Deleting your account and data</a></li>
+          <li><a href="#s8">8. Data on your device</a></li>
+          <li><a href="#s9">9. Children</a></li>
+          <li><a href="#s10">10. Security</a></li>
+          <li><a href="#s11">11. Changes and contact</a></li>
         </ol>
       </aside>
-
       <article class="legal-body">
         <h1>Privacy Policy</h1>
-        <p class="legal-meta">Version 1.0 · Effective: <span class="fillin">[DATE]</span> · Verity serves women worldwide. We apply one high, GDPR-level standard of protection to every user, wherever you live — this policy is written to comply with the EU/UK GDPR, South Africa's POPIA, and applicable US state health-privacy laws, and we extend the same baseline everywhere.</p>
-        <p>This policy explains what personal information Verity collects, why, who we share it with, how long we keep it, and the rights you have.</p>
+<p class="legal-meta">Last updated 18 September 2026.</p>
+<p>This policy explains what personal information Verity collects, why we use it, who we share it with, how long we keep it, and the rights you have.</p>
+<p>We have written it in plain English so you can read it once and know where you stand. Short legal names (POPIA, GDPR) appear where they help a regulator. They do not change the plain meaning.</p>
+<p>Verity is a hormonal-health companion for women aged 18 and over. Tagline: <em>Your body’s truth, in your hands.</em> The app is <strong>not</strong> a medical device. It does not diagnose, prescribe, or give medication doses.</p>
+<p>This policy covers:</p>
+<ul>
+<li>the Verity app for iOS (bundle id <code>com.veritywomen.app</code>) and Android (package <code>app.verity.mobile</code>); and</li>
+<li>the website <a href="https://veritywomen.com">https://veritywomen.com</a>.</li>
+</ul>
+<h2 id="s1">1. Who we are</h2>
+<p>Verity is operated by its founders, <strong>Pierre van Rooyen</strong> and <strong>Elvera Van Rooyen</strong>, as an unincorporated venture. There is no company registration number yet. If we register a company, we will update this policy with the entity name and number.</p>
+<p>For data-protection law they are the <strong>responsible party</strong> (South Africa’s Protection of Personal Information Act, 2013 — <strong>POPIA</strong>) and the <strong>controller</strong> (the EU/UK GDPR, where it applies): the people who decide why and how your information is used. They trade as <strong>Verity</strong>.</p>
+<p><strong>Information Officer:</strong> Elvera Van Rooyen (Information Regulator registration <strong>2026-065680</strong>) <strong>Privacy:</strong> <a href="mailto:privacy@veritywomen.com">privacy@veritywomen.com</a> <strong>Support:</strong> <a href="mailto:support@veritywomen.com">support@veritywomen.com</a> <strong>Website:</strong> <a href="https://veritywomen.com">https://veritywomen.com</a> <strong>This policy:</strong> <a href="https://veritywomen.com/privacy">https://veritywomen.com/privacy</a> <strong>Terms of Service:</strong> <a href="https://veritywomen.com/terms">https://veritywomen.com/terms</a></p>
+<p>A postal street address is available on request from <a href="mailto:privacy@veritywomen.com">privacy@veritywomen.com</a>.</p>
+<h2 id="s2">2. What we collect</h2>
+<p>Most of what Verity holds is <strong>health information</strong>. The law treats that as especially sensitive — “special personal information” under POPIA, and “special-category data” under the GDPR. We only collect it if you choose to use Verity and give the consents described in section 3.</p>
+<p>You can use Verity <strong>without an account</strong>. Then your record stays on that phone. An account is optional. It is how we keep a copy of some of your record if the phone is lost, and it is required to invite a support person or to ask live Ask Vera in your own words.</p>
+<h3>Account (only if you create one)</h3>
+<ul>
+<li>Email address.</li>
+<li>A password. We store a one-way hash of the password, not the password itself. We cannot read it back.</li>
+<li>If you sign in with <strong>Google</strong>, Google confirms who you are. We receive a token, your email, and a Google user id. We do not receive your Google contacts, Drive, photos, or search history.</li>
+<li>If you sign in with <strong>Apple</strong> on iPhone, Apple confirms who you are. We receive an identity token. We receive your email only if you choose to share it (Apple may give us a Hide My Email relay address). The first time you authorise Verity, Apple may also send a name. We do not receive your Apple contacts, iCloud files, photos, or payment details.</li>
+<li>Sign in with Apple is not a working login on Android. On Android the button says it is not ready; a tap does not send anything to Apple.</li>
+</ul>
+<h3>Profile</h3>
+<p>What you tell us about yourself in the app, for example:</p>
+<ul>
+<li>display name;</li>
+<li>age or date of birth;</li>
+<li>life stage (for example, regular cycles, perimenopause, menopause, postmenopause);</li>
+<li>whether you are on HRT;</li>
+<li>the concerns you pick during set-up.</li>
+</ul>
+<p>An optional <strong>profile photo</strong> stays on that phone. We store a file name in your profile so the app can show it. We do not copy the photo into our cloud backup.</p>
+<h3>Health and cycle logs</h3>
+<p>What you choose to log, for example:</p>
+<ul>
+<li>cycle entries (period days, flow, spotting);</li>
+<li>symptoms — including mood, mental-health, sexual and intimate-health symptoms — and how strong they felt;</li>
+<li>energy and sleep;</li>
+<li>food and exercise;</li>
+<li>free-text notes you type.</li>
+</ul>
+<h3>HRT</h3>
+<p>Hormone-therapy type, how you take it, dose, brand, start date, changes, and how you said you felt.</p>
+<h3>Health-background survey</h3>
+<p>Longer “health background” answers (the in-app health-profile survey) <strong>stay on that phone</strong>. They are not copied into your cloud account.</p>
+<h3>Documents</h3>
+<p>Letters, scans and similar files you add in Verity <strong>stay on that phone</strong>. There is no documents upload to our servers.</p>
+<h3>Doctor report</h3>
+<p>You can build a PDF to take to a clinician. That file is created <strong>on your phone</strong>. If you share it (email, messaging, files), it leaves through the app you choose, under that app’s rules. We do not receive a copy of the share.</p>
+<h3>Support-person mode</h3>
+<p>If you invite someone:</p>
+<ul>
+<li>a one-time invite code (it lasts about three days);</li>
+<li>the link between your accounts;</li>
+<li>the categories you have turned on for them, if any;</li>
+<li>notes they write about how you seemed.</li>
+</ul>
+<p>They see <strong>nothing of yours</strong> until you opt in, category by category. The categories you can share are: symptoms, sleep and energy, cycle, and HRT. <strong>Vera chats, the health-background survey, and documents cannot be shared.</strong> There is no switch for those.</p>
+<p>If you are the support person, we store the notes you write about the person you support, and your own account details. You do not get their health record unless they turn a category on.</p>
+<h3>Vera — ready answers (Ask Vera)</h3>
+<p>Ask Vera’s ready answers are pre-written articles from a cited evidence library, served <strong>on your device</strong>. Reading them does not send the question to an AI model and does not need a network call for the answer. We do not collect the text of those taps as a health record.</p>
+<p>Those articles are <strong>general educational information from cited sources</strong>. A clinician review is underway. <strong>They are not currently clinician-signed in the production app.</strong> They are not medical advice.</p>
+<h3>Vera — live Ask Vera (optional, uses an AI model)</h3>
+<p>Live Ask Vera is <strong>on</strong>. You type a question in your own words.</p>
+<ul>
+<li>The app sends the question to the <strong>Verity API</strong> on our server in the EU, which sends it to <strong>OpenRouter</strong> (a third-party AI service, typically on US infrastructure) so a language model can draft an answer. Ask Vera is not medical advice and is not a medical device.</li>
+<li>On that OpenRouter account we turn on <strong>Zero Data Retention</strong> and we block providers that train on prompts. Every live request also asks OpenRouter not to retain the prompt and not to use it for training. We do <strong>not</strong> have a signed data-processing agreement with OpenRouter. We do not claim HIPAA, a Business Associate Agreement, or that health data never leaves the phone.</li>
+<li>Sent with the question, so the answer can fit you: age, life stage, HRT status, recent symptoms, and how you have been eating. <strong>Not</strong> your name or email.</li>
+<li><strong>Extra consent ticks</strong> appear before your first live question. You must agree that Vera is AI, not a doctor, and that the question is sent to our AI provider.</li>
+<li>You need an account. There is a <strong>monthly allowance</strong>: 15 live questions a calendar month. There is no paid plan and no in-app purchase.</li>
+<li>Crisis, dose, or otherwise unsafe questions are stopped on our server. They <strong>never reach the model</strong>, are not stored as a conversation, and do not use up a question.</li>
+<li>If the live call fails, you see an honest “unavailable” message. The app <strong>must not</strong> invent a fake health answer.</li>
+</ul>
+<p><strong>What we log on the server about live use:</strong> a user id and an outcome code (for example, that an answer was given, or that a question was blocked). <strong>Never</strong> the question text, the answer text, or the API key, in those logs.</p>
+<p><strong>Where the conversation itself lives:</strong></p>
+<ul>
+<li>Without an account, any on-device demo chat stays on that phone.</li>
+<li>The one-time <strong>cloud backup</strong> when you first sign in copies logs, HRT and profile. It does <strong>not</strong> copy documents, the health-background survey, or Vera chats that were already on the phone.</li>
+<li>If you use live Ask Vera <strong>while signed in</strong>, we keep that conversation with your account on our EU server so it can show again in the app. Deleting your account deletes it.</li>
+</ul>
+<p>Live answers are <strong>AI-generated and can be wrong</strong>. They are <strong>not clinician-reviewed</strong>.</p>
+<h3>Consent records</h3>
+<p>Which boxes you ticked, the consent version shown (<strong>currently 1.1</strong>), and the time. None of the onboarding boxes is pre-ticked. The four onboarding consents are:</p>
+<p>1. storing your health data on your device and in the cloud; 2. that Vera is an AI companion, not a medical professional; 3. the Privacy Policy and Terms of Service; 4. that you are 18 or older.</p>
+<p>Live Ask Vera has its own extra ticks, stored with a separate version stamp, before the first live question.</p>
+<p>If you join as a support person, you tick the same four kinds of box. The health-data box is about <strong>notes you write about the person you support</strong>, not about your own hormones.</p>
+<h3>Technical data</h3>
+<p>To run the app we necessarily see ordinary connection information: that a signed-in request reached our server, roughly when, from an IP address, and which account the sign-in belongs to. We do not collect advertising identifiers. We do not embed advertising or social-media tracking SDKs. We do not currently use a separate crash-reporting company (for example Sentry or Crashlytics).</p>
+<p>If you turn on <strong>Help improve Verity</strong> (Settings → Privacy &amp; data; it starts off), we record technical usage: that the app opened, and which screen names you visited. A copy of those events can live on our EU server. We also send that same kind of technical usage to <strong>Google Analytics (Firebase)</strong>. Neither copy includes health logs, HRT details, symptoms, chat, or your email. Developer copies of the app are not sent to Google. You can turn the switch off at any time.</p>
+<p>On the <strong>website</strong> (<a href="https://veritywomen.com">veritywomen.com</a>), we use <strong>Google Analytics</strong> to understand which pages people open and how the site is used. Google receives ordinary visit data (for example IP address used to estimate location, device and browser type, and pages viewed). That is technical visit data for the marketing site. It is not your in-app health record.</p>
 
-        <h2 id="s1">1. Who we are</h2>
-        <p>Verity is operated by <span class="fillin">[Registered entity name and registration number]</span>, of <span class="fillin">[business address]</span> ("Verity", "we", "us"). For data-protection purposes we are the responsible party (POPIA) and the data controller (GDPR). Information Officer / privacy contact: <span class="fillin">[name]</span>, privacy@veritywomen.com.</p>
-
-        <h2 id="s2">2. The data we collect</h2>
-        <p>Most of what Verity collects is health data, which the law treats as especially sensitive ("special personal information" under POPIA; "special-category data" under GDPR).</p>
-        <ul>
-          <li><strong>Account data</strong> — email and password (only if you create an account). You can use Verity in local-only mode without an account.</li>
-          <li><strong>Profile data</strong> — display name, age / date of birth, life stage, current concerns, optional photo.</li>
-          <li><strong>Health &amp; cycle data</strong> — cycle entries, symptoms (including mental-health, sexual and intimate-health symptoms), energy and mood, sleep, nutrition and exercise logs, and free-text notes.</li>
-          <li><strong>HRT data</strong> — hormone-therapy type, delivery method, dose, brand, start date, and changes over time.</li>
-          <li><strong>Support-person data</strong> — if you link a support person: the link, and observations they log about you (and, for support people, observations you log about the person you support).</li>
-          <li><strong>Consent records</strong> — which consents you gave, when, the version of the text shown, and the app version.</li>
-          <li><strong>Technical data</strong> — device type, OS version, app version, crash diagnostics. No advertising identifiers.</li>
-        </ul>
-        <div class="callout"><strong>Vera — free tier (curated Q&amp;A):</strong> The free Vera answers a fixed set of preselected questions with pre-written, clinician-reviewed information, served on your device. It is not sent to any AI service and does not process free-text you type.<br /><br /><strong>Vera — premium tier (Ask Vera AI):</strong> If you subscribe to Verity Premium, Ask Vera AI processes the question you type. With your consent, and without identifying details, your question is sent to an AI provider that answers grounded in Verity's clinician-reviewed library. We do not use your health data to train any AI model. Full details are provided before you subscribe.</div>
-        <p><strong>What we do NOT do:</strong> we do not sell your data; we do not share it with advertisers or ad networks; we do not embed advertising or social-media tracking SDKs; we never use your health data to target ads.</p>
-
-        <h2 id="s3">3. Why we use your data, and our legal basis</h2>
-        <ul>
-          <li><strong>To provide tracking</strong> (cycle, symptom, sleep, nutrition, exercise, HRT), insights, trends and your doctor report — your explicit consent to process health data (GDPR Art 9(2)(a); POPIA s27(1)(a)); and performance of our contract for the non-health parts (GDPR Art 6(1)(b)).</li>
-          <li><strong>To provide Vera's curated information</strong> — your consent; no external processing is involved.</li>
-          <li><strong>To enable support-person mode</strong> — your explicit consent and your support person's, recorded at linking.</li>
-          <li><strong>To keep the app secure, fix bugs, prevent abuse</strong> — our legitimate interests (GDPR Art 6(1)(f); POPIA s9).</li>
-          <li><strong>To meet legal obligations</strong> — legal obligation (GDPR Art 6(1)(c); POPIA).</li>
-        </ul>
-        <p>You can <strong>withdraw consent</strong> any time in Settings; withdrawal doesn't affect prior processing and may mean parts of the app stop working.</p>
-
-        <h2 id="s4">4. Who we share data with (sub-processors)</h2>
-        <p>We share data only with the providers we need to run Verity, each bound by a written data-processing agreement and acting only on our instructions:</p>
-        <ul>
-          <li><span class="fillin">[Hosting provider name]</span> — the server our database, sign-in and storage run on (MongoDB we run ourselves). Hosting region: the European Union (France).</li>
-          <li><strong>Expo</strong> — push notifications.</li>
-          <li><span class="fillin">[Email provider]</span> — transactional email (e.g. deletion confirmations).</li>
-          <li><strong>AI provider (Verity Premium only)</strong> — powers Ask Vera AI; receives the question you ask, without identifying details, only on your consent. We will name the provider and its safeguards here before Premium launches.</li>
-        </ul>
-        <p>A current list is available at veritywomen.com/subprocessors. <strong>International transfers:</strong> where data moves outside its home country, we rely on lawful transfer mechanisms — Standard Contractual Clauses / UK IDTA and, for POPIA, contractual adequate-protection commitments and your consent (POPIA s72).</p>
-        <div class="callout"><em>AI provider — Verity Premium only.</em> The free app sends nothing to any AI. If you subscribe to Verity Premium's Ask Vera AI, an AI-provider sub-processor answers your questions — only on your consent, without identifying details, and grounded in our vetted content. We will name the provider and its safeguards here before Premium launches, and we never use your health data to train an AI model.</div>
-
-        <h2 id="s5">5. How long we keep data</h2>
-        <ul>
-          <li><strong>Account, profile, logs, HRT, support-person data</strong> — kept while your account is active; deleted when you delete your account (section 7), within 30 days and usually sooner.</li>
-          <li><strong>Consent records</strong> — kept for the life of the account plus a limited period after deletion, as proof of consent.</li>
-          <li><strong>Local-only data</strong> — stored on your device only; removed when you delete it in-app or uninstall.</li>
-          <li><strong>Crash diagnostics</strong> — <span class="fillin">[e.g. 90 days]</span>.</li>
-        </ul>
-
-        <h2 id="s6">6. Your rights</h2>
-        <p>Depending on where you live: <strong>access</strong> (POPIA s23; GDPR Art 15), <strong>correction</strong> (s24; Art 16), <strong>deletion</strong> (Art 17; s24), <strong>portability</strong> — Verity offers a JSON export (Art 20), <strong>object/restrict</strong> (Arts 18, 21), <strong>withdraw consent</strong> (Art 7(3)), and <strong>complain</strong> to a regulator (SA Information Regulator, your EU supervisory authority, or the UK ICO). US residents (California CPRA; Washington My Health My Data Act) have additional rights over consumer-health data; we do not sell it. Contact privacy@veritywomen.com.</p>
-
-        <h2 id="s7">7. Deleting your account</h2>
-        <p>In Settings → Privacy &amp; Data you can permanently delete your account. This hard-deletes your data from our systems (not a soft delete), removes your sign-in record, and deletes your on-device data. We complete deletion within 30 days. We keep only a minimal, timestamped, de-identified record that a deletion took place (a hashed request reference and date — no personal or health data), to meet our own legal obligations and prove the erasure was honoured. If you used support-person mode, observations about you are deleted or anonymised; tell us if you also want observations you authored removed.</p>
-
-        <h2 id="s8">8. Data on your device</h2>
-        <p>Verity stores some data locally for speed and offline use. That data sits in Verity's own storage area, which your phone's operating system keeps other apps out of; we do not add a separate layer of encryption on top of that today. Deleting the app removes local data, but a device backup (iCloud/Google) may retain a copy under that provider's terms. Use the in-app delete to remove server-side data.</p>
-
-        <h2 id="s9">9. Children</h2>
-        <p><strong>Verity is for adults aged 18 and older.</strong> We do not knowingly collect data from anyone under 18. If we learn we have, we delete it.</p>
-
-        <h2 id="s10">10. Security</h2>
-        <p>Here is plainly what protects your data. Everything the app sends us travels over an encrypted connection, so it cannot be read on the way. You have to sign in to reach anything, our database requires its own password, and every request is checked against your account — so your records are only ever served to you. The server that holds them is in the European Union. We do not sell your data and we do not give it to advertisers.</p>
-        <p>And the limit, so you are not left guessing: once your data reaches our server it is stored as ordinary files — we do not add a separate layer of encryption on top of them today, in the same way we don't on your phone (section 8). The people who look after the server can therefore reach what is on it. If you would rather nothing left your phone at all, use Verity without an account; then nothing is sent to us. No system is perfectly secure; if a breach affects you, we will tell you and the relevant regulator, as the law requires.</p>
-
-        <h2 id="s11">11. Changes and contact</h2>
-        <p>We will update this policy as Verity evolves and tell you about material changes. Questions or requests: privacy@veritywomen.com. Postal: <span class="fillin">[address]</span>.</p>
-
-        <p class="tiny" style="margin-top:var(--s-xl);">See also our <a href="terms.html">Terms of Service</a>.</p>
+<h3>Reminders</h3>
+<p>If you turn reminders on (morning or evening check-in, or an HRT check-in a few weeks after a change), they are scheduled <strong>on your phone</strong>. We do not currently send those reminders through a separate push server. The app uses Expo’s notifications library to talk to your phone’s own reminder system.</p>
+<h3>Website</h3>
+<p>If you visit <a href="https://veritywomen.com">veritywomen.com</a> or join a waitlist, we may keep the email address you type so we can write to you, and we send a confirmation email. You can ask us to delete that address.</p>
+<h3>What we do not do</h3>
+<ul>
+<li>We do not sell your data.</li>
+<li>We do not share it with advertisers or ad networks.</li>
+<li>We do not use your health data to target ads.</li>
+<li>We do not put a provider API key or model id in the app.</li>
+<li>We do not claim HIPAA, a Business Associate Agreement, or a signed data-processing agreement with OpenRouter.</li>
+</ul>
+<h2 id="s3">3. Why we use your data</h2>
+<div class="legal-table-wrap"><table>
+<tr><th>What we do</th><th>Why, in plain language</th><th>Legal basis</th></tr>
+<tr><td>Store what you log, show trends, and build your doctor report</td><td>That is the app you asked for</td><td><strong>Health data:</strong> your <strong>explicit consent</strong> (POPIA s 27(1)(a); GDPR Art. 9(2)(a) where it applies). <strong>Account and similar non-health details:</strong> performing our contract with you (GDPR Art. 6(1)(b) where it applies).</td></tr>
+<tr><td>Keep a cloud copy of logs, HRT and profile if you create an account</td><td>So a lost phone does not take the whole record</td><td>Same consents; you can stay local-only instead</td></tr>
+<tr><td>Serve Vera’s curated Q&amp;A on the device</td><td>General educational information you chose to open</td><td>Your consent; the answer itself does not leave the phone</td></tr>
+<tr><td>Send a live question to an AI provider</td><td>So Vera can answer in your own words</td><td>Extra <strong>explicit consent</strong> before the first live question</td></tr>
+<tr><td>Support-person notes and optional shared categories</td><td>So someone you trust can notice what you asked them to see</td><td>Your opt-in per category, and their consent to store notes about you</td></tr>
+<tr><td>Password-reset and similar service emails</td><td>So you can get back into the account</td><td>Contract / your request</td></tr>
+<tr><td>Record technical app use if you turn on <strong>Help improve Verity</strong></td><td>So we can see which screens people open — not to read your health record</td><td>Your consent (that switch). You can turn it off any time</td></tr>
+<tr><td>Keep the service running, fix bugs, stop abuse</td><td>So the app stays up and other people’s records stay theirs</td><td>Legitimate interests in running a secure service (GDPR Art. 6(1)(f); POPIA s 11), balanced against your rights</td></tr>
+<tr><td>Meet the law</td><td>For example, a regulator request we are required to answer</td><td>Legal obligation</td></tr>
+</table></div>
+<p>You can <strong>withdraw consent</strong> at any time by stopping use, turning a support-person category off, not using live Ask Vera, turning <strong>Help improve Verity</strong> off in Settings → Privacy &amp; data, or deleting your account (section 7). Withdrawal does not undo work already done lawfully. Some parts of the app will stop working without consent — that is the honest result, not a punishment. Turning the analytics switch off does not stop the rest of the app working.</p>
+<p>We do not use your information for a new purpose that would surprise you. If that ever changes, we will ask again.</p>
+<h2 id="s4">4. Who we share data with</h2>
+<p>We do not sell your information. We do not give it to advertisers.</p>
+<p>We share it only with the people and companies needed to run Verity, and only as much as that job requires.</p>
+<p><strong>Named companies and systems today:</strong></p>
+<div class="legal-table-wrap"><table>
+<tr><th>Who</th><th>What they do</th><th>Where</th></tr>
+<tr><td><strong>Contabo</strong></td><td>Hosts the Verity API and database on a VPS</td><td>Lauterbourg, France (EU)</td></tr>
+<tr><td><strong>MongoDB Community, which we operate</strong></td><td>The database software on that <strong>same</strong> VPS. We do not use MongoDB Atlas. MongoDB the company does not receive your data as a cloud customer of theirs</td><td>Same server in France</td></tr>
+<tr><td><strong>OpenRouter</strong></td><td>Writes live Ask Vera answers. Receives the question and the small profile context above — <strong>only</strong> if you use live Ask Vera and have given the extra consent. Our OpenRouter account has Zero Data Retention on and training off. <strong>No signed data-processing agreement.</strong></td><td>Typically United States infrastructure; may process outside South Africa and the EU</td></tr>
+<tr><td><strong>Resend</strong></td><td>Sends password-reset and other transactional email (for example a waitlist confirmation)</td><td>Email delivery; Resend is a US company with EU sending options</td></tr>
+<tr><td><strong>Google</strong></td><td>Sign-in, <strong>only if you tap Continue with Google</strong></td><td>Google’s infrastructure, under Google’s terms</td></tr>
+<tr><td><strong>Google Analytics (website)</strong></td><td>Measures visits to <strong>veritywomen.com</strong>: pages viewed, approximate location from IP, device and browser. Does <strong>not</strong> receive health logs, HRT details, chat, or in-app account data</td><td>Google’s infrastructure; typically United States</td></tr>
+<tr><td><strong>Google Analytics / Firebase (app)</strong></td><td>If you turn on <strong>Help improve Verity</strong>, measures technical app use: that the app opened, which screen names you visited, and similar engagement. Does <strong>not</strong> receive health logs, HRT details, symptoms, chat, or your email. Developer copies of the app are not sent</td><td>Google’s infrastructure; typically United States</td></tr>
+<tr><td><strong>Apple</strong></td><td>Sign-in, <strong>only if you tap Continue with Apple</strong> on iPhone. We receive an identity token; an email only if you share one (Apple may give a Hide My Email relay address); a name only on the first authorisation.</td><td>Apple’s infrastructure, under Apple’s terms</td></tr>
+<tr><td><strong>Expo</strong></td><td>The notifications library on your phone. If we later use Expo’s push service to deliver a reminder you have opted into, Expo would see a <strong>device token</strong>, not your health logs</td><td>Device, and Expo if push is used</td></tr>
+</table></div>
+<p>If you join the waitlist on the website, a <strong>Cloudflare</strong> worker stores the email so we can write to you. That is only the waitlist address, not your in-app health record. Separately, <strong>Google Analytics</strong> records ordinary page-visit data on the website (see the table above).</p>
+<p><strong>Support person.</strong> If you invite one, they see only what you have turned on, plus the notes they write. That is sharing you chose.</p>
+<p><strong>Authorities.</strong> We will share information if the law requires it, or to protect someone’s vital interests in an emergency.</p>
+<p><strong>A buyer of the venture.</strong> If Verity is later transferred to a registered company or a buyer, your information would move with the service, still under this policy or a replacement we will show you. We will not treat that as a chance to start selling data.</p>
+<p>We do <strong>not</strong> keep a separate “subprocessors” web page. The list above is the list.</p>
+<h3>International transfers</h3>
+<p>Your phone may be in South Africa, the EU, the UK, the US, or elsewhere. Our server is in <strong>France</strong>.</p>
+<ul>
+<li>Creating an account stores the backed-up record in France. If you live outside the EU, that is an international transfer. You consent to it when you agree to this policy and create an account. We also have a written hosting contract with Contabo.</li>
+<li>A <strong>live Ask Vera</strong> question may be processed by OpenRouter <strong>outside South Africa and the EU</strong> (often the United States). You agree to that in the extra ticks before the first live question. We rely on that consent, on OpenRouter’s account terms, and on the Zero Data Retention and no-training settings on that account. We do <strong>not</strong> have a signed data-processing agreement or EU Standard Contractual Clauses with OpenRouter.</li>
+<li><strong>Google Analytics</strong> (website visits, and app technical usage if you turn on Help improve Verity) is typically processed in the <strong>United States</strong>. You agree to the app part when you turn that switch on. Website measurement is the marketing site only.</li>
+</ul>
+<h2 id="s5">5. How long we keep data</h2>
+<ul>
+<li><strong>Account, profile, logs, HRT, support-person link and notes, live Vera conversations we store for a signed-in account, and the live-use ledger (user id + outcome only):</strong> kept while the account is active. Deleted when you delete the account (section 7).</li>
+<li><strong>Consent records:</strong> kept with the account so we can show what you agreed to. They are deleted with the account today.</li>
+<li><strong>Health-background survey, documents, and profile photo:</strong> on the phone, until you delete them in the app, delete the account (which also clears the on-device store), or uninstall. Uninstalling does not by itself delete a cloud account.</li>
+<li><strong>Local-only use (no account):</strong> on that phone only, until you delete it in the app or uninstall.</li>
+<li><strong>Invite codes:</strong> about three days, or until used or cancelled.</li>
+<li><strong>Password-reset codes:</strong> short-lived; they die if you change the password, wipe data, or delete the account.</li>
+<li><strong>Waitlist email:</strong> until you unsubscribe or ask us to delete it.</li>
+<li><strong>Ordinary technical logs</strong> (for example that a request reached the server): only as long as we need them to run and protect the service.</li>
+<li><strong>Technical app-usage events</strong> (Help improve Verity): the copy on our EU server is kept only as long as we need it to see whether the app is working. The copy sent to Google Analytics is kept by Google for the retention period set on that property (we keep it as short as the product allows). Turning the switch off stops new events. It does not erase what Google already received. You can ask us at <a href="mailto:privacy@veritywomen.com">privacy@veritywomen.com</a>.</li>
+</ul>
+<p>We complete an account deletion <strong>well within 30 days</strong>, and usually <strong>at once</strong>.</p>
+<p>Phone backups (iCloud, Google backup, and the like) are outside Verity. They may keep a copy under that provider’s rules until that backup ages out.</p>
+<h2 id="s6">6. Your rights</h2>
+<p>You have rights over your information. How they are named depends on where you live. In practice you can:</p>
+<ul>
+<li><strong>Access</strong> what we hold (POPIA s 23; GDPR Art. 15).</li>
+<li><strong>Correct</strong> what is wrong (POPIA s 24; GDPR Art. 16). Most fields in Verity can be edited in the app.</li>
+<li><strong>Delete</strong> (section 7; GDPR Art. 17; POPIA s 24).</li>
+<li><strong>Get a copy</strong> — Verity has a <strong>JSON export</strong> in Settings → Privacy &amp; data (GDPR Art. 20 portability).</li>
+<li><strong>Object or restrict</strong> certain uses (GDPR Arts. 18 and 21), and <strong>withdraw consent</strong>.</li>
+<li><strong>Complain</strong> to a regulator.</li>
+</ul>
+<p><strong>South Africa — Information Regulator</strong> Website: <a href="https://inforegulator.org.za">https://inforegulator.org.za</a> POPIA complaints: <a href="mailto:POPIAComplaints@inforegulator.org.za">POPIAComplaints@inforegulator.org.za</a> Enquiries: <a href="mailto:enquiries@inforegulator.org.za">enquiries@inforegulator.org.za</a> Woodmead North Office Park, 54 Maxwell Drive, Woodmead, Johannesburg, 2191 Toll-free: 0800 017 160</p>
+<p>If you are in the <strong>EEA or UK</strong>, you can also complain to your local data-protection authority (in the UK, the ICO). GDPR applies to us where the law says it does — for example if we offer the app to people in the EEA/UK. We honour the rights above; this policy is not a claim that we have a separate EU office.</p>
+<p><strong>United States.</strong> We do <strong>not</strong> sell personal information or health data, and we do not share it for advertising. US state laws differ (for example California’s CPRA). We do not claim a full US-state privacy programme. If you have a request, email <a href="mailto:privacy@veritywomen.com">privacy@veritywomen.com</a> and we will help.</p>
+<p>You do not have to pay to use these rights. We may need to confirm it is you. We will answer as soon as we reasonably can.</p>
+<h2 id="s7">7. Deleting your account and data</h2>
+<p>In the app: <strong>Settings → Privacy &amp; data</strong>. Type <strong>DELETE</strong> to confirm.</p>
+<p>That hard-deletes your data from our systems. It is not a “deactivate” that we can undo. It removes your authentication record, your rows on our server, and the Verity store on that phone.</p>
+<p>We complete this <strong>well within 30 days</strong>, and <strong>usually immediately</strong>.</p>
+<p>We do <strong>not</strong> currently keep a hashed “deletion receipt.” We delete the account and the data. If the law requires a minimal proof that a deletion happened, we may later keep a de-identified timestamp (a date, with no name and no health data). We do not do that today.</p>
+<p><strong>Support-person notes</strong></p>
+<ul>
+<li>If you <strong>end the link</strong>, notes already written about you <strong>stay in your record</strong>. You can <strong>delete</strong> a note. You cannot <strong>edit</strong> someone else’s note.</li>
+<li>If <strong>you delete your account</strong>, notes about you go with your record.</li>
+<li>If a <strong>support person deletes their account</strong>, the notes they wrote about you are removed from your record too. The app tells them that before they confirm.</li>
+</ul>
+<p>Signing out is not deletion. Your cloud copy stays until you delete the account.</p>
+<h2 id="s8">8. Data on your device</h2>
+<p>Verity keeps a copy of your record on the phone so the app works offline and feels fast.</p>
+<p>That copy sits in Verity’s own storage area. Your phone’s operating system keeps other apps out of it. <strong>We do not add a separate layer of encryption on top of that store today</strong> (the on-device store is MMKV, with no extra encryption key).</p>
+<p><strong>What an account actually backs up:</strong> logs, HRT record, and profile. <strong>Documents, the health-background survey, and Vera chats already on the phone are not part of that backup.</strong> Live Ask Vera conversations you have while signed in are stored with the account as described in section 2.</p>
+<p>Deleting the app removes local data. A device backup may still hold a copy. Use the in-app delete if you also need the server copy gone.</p>
+<p>If you would rather <strong>nothing left the phone at all</strong>, use Verity without an account. Then we do not hold a cloud copy. You cannot invite a support person or use live Ask Vera that way.</p>
+<h2 id="s9">9. Children</h2>
+<p><strong>Verity is for adults aged 18 and older.</strong> We do not knowingly collect information from anyone under 18. The onboarding gate asks you to confirm you are 18+. If we learn we have data about a child, we delete it.</p>
+<h2 id="s10">10. Security</h2>
+<p>What is true, stated plainly:</p>
+<ul>
+<li>Traffic between the app and our API travels over <strong>HTTPS</strong>, so it cannot be read on the way.</li>
+<li>Cloud data requires <strong>sign-in</strong>.</li>
+<li>The API checks every request against <strong>your</strong> account, so one account is not served another person’s record.</li>
+<li>The database sits on our VPS in France and is not meant to be open to the public internet.</li>
+<li>We do <strong>not</strong> add extra encryption at rest on the server (MongoDB Community, no disk encryption).</li>
+<li>We do <strong>not</strong> add extra encryption on the phone store, beyond the phone’s own app sandbox.</li>
+</ul>
+<p>Once data is on the server, people who look after that server can reach what is on it. We do not claim the record is “encrypted and stored privately.”</p>
+<p>No system is perfectly secure. If a breach affects you, we will tell you and the relevant regulator, as the law requires (including POPIA’s notification duties and, where GDPR applies, the usual 72-hour regulator notice).</p>
+<h2 id="s11">11. Changes and contact</h2>
+<p>We will update this policy as Verity changes. The date at the top is the latest version. For a material change we will tell you in the app or by email where we can, and ask for a new consent if the law requires it.</p>
+<p>Questions or requests: <strong><a href="mailto:privacy@veritywomen.com">privacy@veritywomen.com</a></strong>. App help: <strong><a href="mailto:support@veritywomen.com">support@veritywomen.com</a></strong>.</p>
+<p>A postal street address is available on request from <a href="mailto:privacy@veritywomen.com">privacy@veritywomen.com</a>.</p>
       </article>
+
     </div>
   </main>
 
