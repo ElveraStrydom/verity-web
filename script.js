@@ -182,7 +182,7 @@
   // --- CTA click tracking (anchors / badges; form submit → generate_lead) --
   document.addEventListener("click", function (e) {
     var el = e.target && e.target.closest
-      ? e.target.closest('a[href*="apps.apple.com"], a[href="#waitlist"], a[href="#waitlistTop"], [data-waitlist], a.btn-primary, a.store-badge, a.store-badge-apple')
+      ? e.target.closest('a[href*="apps.apple.com"], a[href="#waitlist"], a[href="#waitlistTop"], [data-waitlist], a.btn-primary, a.store-badge, a.store-badge-apple, a[data-social]')
       : null;
     if (!el) return;
     if (el.closest && el.closest("form")) return;
@@ -201,6 +201,9 @@
       ctaId = "waitlist_anchor";
     } else if (href === "#waitlistTop") {
       ctaId = "waitlist_top_anchor";
+    } else if (el.hasAttribute("data-social")) {
+      // Footer social links: cta_id "social_facebook" / "_instagram" / "_linkedin" / "_x"
+      ctaId = "social_" + el.getAttribute("data-social");
     } else if (el.classList && el.classList.contains("btn-primary")) {
       ctaId = "primary_cta";
     } else {

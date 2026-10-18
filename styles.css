@@ -494,19 +494,24 @@ h3 { font-size: 1.25rem; }
 .footer-brand { max-width: 320px; }
 .footer-brand p { color: var(--text-second); font-size: 0.9rem; margin: var(--s-sm) 0 0; }
 .footer-social { margin-top: var(--s-md); }
-.social-link {
-  display: inline-flex; align-items: center; gap: var(--s-sm);
-  min-height: 44px; padding: 8px 14px 8px 12px;
-  border-radius: var(--r-pill); border: 1.5px solid var(--separator);
-  color: var(--plum); font-size: 0.9rem; font-weight: 500;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+.footer-brand .footer-social-label { color: var(--text-second); font-size: 0.9375rem; font-weight: 500; margin: 0; }
+/* Icon-only links: 48x48 targets, 12px apart, logo 24px. Row pulled left by
+   the 12px inset so the first logo lines up with the text above it.
+   Logos keep each brand's own colours (no plum): LinkedIn blue / white,
+   Instagram glyph and X black / white, Facebook always blue circle + white f. */
+.social-icons { list-style: none; margin: var(--s-xs) 0 0 -12px; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+.social-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%; color: #000000;
+  transition: background 0.2s ease;
 }
-.social-link svg { flex-shrink: 0; }
-.social-link:hover { background: var(--plum-light); border-color: var(--plum-mid); transform: translateY(-1px); }
-.social-link:focus-visible { outline: 3px solid var(--plum-mid); outline-offset: 2px; }
+.social-icon svg { width: 24px; height: 24px; flex-shrink: 0; }
+.social-icon--linkedin { color: #0A66C2; }
+.social-icon:hover { background: var(--plum-light); text-decoration: none; }
+.social-icon:focus-visible { outline: 3px solid var(--plum-mid); outline-offset: 2px; }
 @media (prefers-color-scheme: dark) {
-  .social-link { color: var(--eyebrow-plum); }
-  .social-link:hover { background: var(--surface-high); }
+  .social-icon, .social-icon--linkedin { color: #FFFFFF; }
+  .social-icon:hover { background: var(--surface-high); }
 }
 .footer-bottom { margin-top: var(--s-lg); padding-top: var(--s-lg); border-top: 1px solid var(--separator); color: var(--text-light); font-size: 0.85rem; }
 
@@ -575,7 +580,7 @@ h3 { font-size: 1.25rem; }
   .meet-media img { object-position: center 6%; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .cards, .steps { grid-template-columns: 1fr; }
-  .legal-grid { grid-template-columns: 1fr; }
+  .legal-grid { grid-template-columns: minmax(0, 1fr); } /* minmax(0): a wide table scrolls in its wrapper instead of widening the page */
   .legal-toc { position: static; }
   .nav-links { display: none; }
   .nav-links.open {
