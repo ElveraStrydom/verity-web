@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /drvera/
+Disallow: /review/
+Disallow: /appletest/
+Disallow: /AppleTest/

@@ -34,6 +34,45 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
   }
 
+
+  // --- GA helpers (no PII / no email) --------------------------------------
+  function trackWaitlist(formId, status) {
+    try {
+      if (typeof gtag !== "function") return;
+      gtag("event", "generate_lead", {
+        form_id: formId,
+        lead_source: "website_waitlist",
+        lead_status: status // "new" | "already" | "saved_no_email"
+      });
+    } catch (e) { /* ignore */ }
+  }
+
+  function trackCtaClick(ctaId, ctaText, ctaLocation) {
+    try {
+      if (typeof gtag !== "function") return;
+      gtag("event", "cta_click", {
+        cta_id: ctaId,
+        cta_text: ctaText,
+        cta_location: ctaLocation
+      });
+    } catch (e) { /* ignore */ }
+  }
+
+  function shortCtaText(el) {
+    var t = (el.getAttribute("aria-label") || el.textContent || "").replace(/\s+/g, " ").trim();
+    if (t.length > 40) t = t.slice(0, 37) + "...";
+    return t || "cta";
+  }
+
+  function ctaLocationFor(el) {
+    if (el.closest("header") || el.closest(".site-header") || el.closest("nav")) return "header";
+    if (el.closest(".hero") || el.closest("#hero")) return "hero";
+    if (el.closest(".cta-band") || el.closest("#waitlist")) return "footer_cta";
+    if (el.closest("footer") || el.closest(".site-footer")) return "footer";
+    if (el.hasAttribute("data-waitlist") || el.closest("[data-waitlist]")) return "store_badge";
+    return "page";
+  }
+
   function wireForm(formId, inputId, msgId) {
     var form = document.getElementById(formId);
     if (!form) return;
@@ -102,6 +141,7 @@
               "ok"
             );
             setButton(btn, "Already on the list", false);
+            trackWaitlist(formId, "already");
           } else if (data && data.confirmationFailed) {
             say(
               "You're on the list — we saved your email. The confirmation email may be delayed; check spam or write to " +
@@ -110,12 +150,14 @@
               "ok"
             );
             setButton(btn, "You're on the list ✓", false);
+            trackWaitlist(formId, "saved_no_email");
           } else {
             say(
               "You're on the list. Check your inbox for a note from hello@veritywomen.com (and spam, just in case).",
               "ok"
             );
             setButton(btn, "You're on the list ✓", false);
+            trackWaitlist(formId, "new");
           }
           // Keep the email in the field so she can see what was captured
           input.value = email;
@@ -135,12 +177,40 @@
   wireForm("waitlistTop", "emailTop", "msgTop");
   wireForm("waitlistBottom", "emailBottom", "msgBottom");
 
-  // --- "Coming soon" store badges -----------------------------------------
-  // The apps aren't published yet, so the App Store / Google Play badges send
-  // the user to the nearest waitlist form (the hero one) and focus the email
-  // field, converting store intent into a signup with minimal travel. The
-  // href="#waitlistTop" is the no-JS fallback. Swap these for real store URLs
-  // once the apps ship (WS13/WS14) and remove this handler.
+
+  // --- CTA click tracking (anchors / badges; form submit → generate_lead) --
+  document.addEventListener("click", function (e) {
+    var el = e.target && e.target.closest
+      ? e.target.closest('a[href="#waitlist"], a[href="#waitlistTop"], [data-waitlist], a.btn-primary, a.store-badge, a.store-badge-apple')
+      : null;
+    if (!el) return;
+    if (el.closest && el.closest("form")) return;
+    if (el.tagName === "BUTTON") return;
+
+    var href = el.getAttribute("href") || "";
+    var ctaId;
+    if (el.classList && el.classList.contains("store-badge-apple")) {
+      ctaId = "app_store";
+    } else if (el.hasAttribute("data-waitlist") || el.closest("[data-waitlist]")) {
+      ctaId = "store_badge";
+    } else if (href === "#waitlist") {
+      ctaId = "waitlist_anchor";
+    } else if (href === "#waitlistTop") {
+      ctaId = "waitlist_top_anchor";
+    } else if (el.classList && el.classList.contains("btn-primary")) {
+      ctaId = "primary_cta";
+    } else {
+      ctaId = "cta";
+    }
+    trackCtaClick(ctaId, shortCtaText(el), ctaLocationFor(el));
+  });
+
+
+  // --- "Coming soon" store badge ------------------------------------------
+  // The iPhone app is live (the App Store badge is a plain link). Android isn't
+  // yet, so the Google Play badge sends the user to the hero waitlist form and
+  // focuses the email field. href="#waitlistTop" is the no-JS fallback. Swap it
+  // for the real Play URL once the Android app ships and remove this handler.
   var badges = document.querySelectorAll("[data-waitlist]");
   var emailTop = document.getElementById("emailTop");
   Array.prototype.forEach.call(badges, function (badge) {

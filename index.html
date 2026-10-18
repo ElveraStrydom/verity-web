@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Verity — Your body's truth, in your hands</title>
-  <meta name="description" content="Verity is a warm, private hormonal-health companion for women at every life stage — cycle, symptom, sleep and HRT tracking, clear trends, and clinician-reviewed guidance from Vera. Join the waitlist." />
+  <meta name="description" content="Verity is a warm, private hormonal-health companion for women in midlife and the years around it — cycle, symptom, sleep and HRT tracking, clear trends, and guidance from cited sources. Now on the App Store." />
   <meta name="theme-color" content="#6B2D8B" />
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="styles.css?v=20260721g" />
+  <link rel="stylesheet" href="styles.css?v=20261018" />
 
   <!-- Open Graph / social -->
   <meta property="og:title" content="Verity — Your body's truth, in your hands" />
-  <meta property="og:description" content="A warm, private hormonal-health companion for women at every life stage. Join the waitlist." />
+  <meta property="og:description" content="A warm, private hormonal-health companion for women in midlife and the years around it. Now on the App Store." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="og-image.svg" />
 
@@ -26,9 +26,30 @@
     "name": "Verity",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "iOS, Android",
-    "description": "A hormonal-health companion for women at every life stage: cycle, symptom, sleep and HRT tracking, trends, and clinician-reviewed guidance.",
+    "description": "A hormonal-health companion for women in midlife and the years around it: cycle, symptom, sleep and HRT tracking, trends, and guidance from cited sources.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
+  </script>
+  <!-- Google Analytics (site visits only; Measurement ID G-VDQ16S09LS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDQ16S09LS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('internal') === '1') {
+          document.cookie = 'verity_ga_internal=1;path=/;max-age=31536000;SameSite=Lax;Secure';
+        }
+        var isInternal = document.cookie.split(';').some(function (c) {
+          return c.trim().indexOf('verity_ga_internal=1') === 0;
+        });
+        gtag('config', 'G-VDQ16S09LS', isInternal ? { traffic_type: 'internal' } : {});
+      } catch (e) {
+        gtag('config', 'G-VDQ16S09LS');
+      }
+    })();
   </script>
 </head>
 <body>
@@ -43,7 +64,7 @@
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#included">Included</a>
         <a href="#privacy">Privacy</a>
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
@@ -62,7 +83,7 @@
         <div class="hero-copy">
           <span class="eyebrow">For every hormonal life stage</span>
           <h1>Your body's truth, in your hands.</h1>
-          <p class="lede">Verity is a warm, private companion for tracking your cycle, symptoms, sleep and HRT — with clear trends and clinician-reviewed guidance from Vera. No noise, no judgement, no ads.</p>
+          <p class="lede">Verity is a warm, private companion for tracking your cycle, symptoms, sleep and HRT — with clear trends and guidance from cited sources. No noise, no judgement, no ads.</p>
 
           <form class="waitlist" id="waitlistTop" novalidate>
             <label class="visually-hidden" for="emailTop">Email address</label>
@@ -70,17 +91,15 @@
               <input class="field" type="email" id="emailTop" name="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="noteTop msgTop" />
               <button class="btn btn-primary" type="submit">Join the waitlist</button>
             </div>
-            <p class="tiny form-note" id="noteTop">Be first to know when Verity launches. One email, no spam — unsubscribe anytime.</p>
+            <p class="tiny form-note" id="noteTop">On Android? We'll email you when Verity reaches Google Play. No spam — unsubscribe anytime.</p>
             <p class="form-msg" id="msgTop" role="status" aria-live="polite"></p>
           </form>
 
-          <div class="hero-badges" aria-label="Coming soon to app stores">
-            <a class="store-badge" href="#waitlistTop" data-waitlist aria-label="App Store — coming soon. Join the waitlist to be notified at launch.">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.9c0 1.1-.4 2.1-1.2 3-.9.9-1.9 1.5-3 1.4-.1-1.1.4-2.2 1.2-3 .8-.9 2-1.5 3-1.4zM20 17c-.5 1.2-.8 1.7-1.5 2.7-1 1.5-2.4 3.3-4.1 3.3-1.5 0-1.9-1-4-1s-2.5 1-4 1c-1.7 0-3-1.6-4-3.1C-.4 16.8-.9 11 1.4 8.1 2.5 6.6 4.3 5.7 6 5.7c1.7 0 2.8 1 4.2 1s2.3-1 4.2-1c1.5 0 3.1.8 4.2 2.2-3.7 2-3.1 7.3 1.4 9.1z"/></svg>
-              <span><small>Coming soon to the</small><b>App Store</b></span>
-              <span class="soon">Soon</span>
+          <div class="hero-badges" aria-label="Get Verity">
+            <a class="store-badge-apple" href="https://apps.apple.com/app/id6809762705">
+              <img src="assets/app-store-badge.svg" width="168" height="56" alt="Download on the App Store" />
             </a>
-            <a class="store-badge" href="#waitlistTop" data-waitlist aria-label="Google Play — coming soon. Join the waitlist to be notified at launch.">
+            <a class="store-badge" href="#waitlistTop" data-waitlist aria-label="Google Play — coming soon. Join the waitlist to hear when it arrives.">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.2l-.1.1zM16.3 15.4l-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1 .6 1 1.6 0 2.2l-3.7 2.1-.1-.1zM15.7 16l-3.2-3.2L3.6 21.7c.4.3.9.3 1.6-.1l10.5-5.6zM15.7 8.6L5.2 3C4.5 2.6 4 2.7 3.6 3l8.9 8.8 3.2-3.2z"/></svg>
               <span><small>Coming soon to</small><b>Google Play</b></span>
               <span class="soon">Soon</span>
@@ -116,7 +135,7 @@
             </div>
             <div class="ps-card ps-vera">
               <span class="ps-vera-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Vera says</span>
-              <p>Your hot flushes have eased since your HRT change two weeks ago — a good sign it's settling in.</p>
+              <p>Your hot flushes have eased in the four weeks since your HRT change.</p>
             </div>
             <div class="ps-card ps-report">
               <span class="ps-report-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Doctor report ready</span>
@@ -145,7 +164,7 @@
           </li>
           <li class="trust-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            <span><strong>Clinician-reviewed</strong>Vera's guidance is written and checked by clinicians.</span>
+            <span><strong>Cited sources</strong>Vera's tap-answers come from published guidelines you can open.</span>
           </li>
           <li class="trust-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg>
@@ -153,9 +172,10 @@
           </li>
           <li class="trust-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6"/></svg>
-            <span><strong>Delete anytime</strong>One tap wipes your data from our systems for good.</span>
+            <span><strong>Delete anytime</strong>Delete everything whenever you like. It's a real, permanent erase.</span>
           </li>
         </ul>
+        <p class="tiny" style="margin:var(--s-lg) 0 0;text-align:center;">Answers link to sources such as <a href="https://www.nhs.uk/conditions/menopause-and-perimenopause/" target="_blank" rel="noopener noreferrer">the NHS</a>, <a href="https://menopause.org/patient-education/menopause-topics/perimenopause" target="_blank" rel="noopener noreferrer">The Menopause Society</a>, <a href="https://www.nice.org.uk/guidance/ng23" target="_blank" rel="noopener noreferrer">NICE menopause guidance</a>, <a href="https://my.clevelandclinic.org/health/diseases/21608-perimenopause" target="_blank" rel="noopener noreferrer">Cleveland Clinic</a>, the <a href="https://www.nia.nih.gov/health/menopause/what-menopause" target="_blank" rel="noopener noreferrer">US National Institute on Aging</a>, and published research.</p>
       </div>
     </section>
 
@@ -165,13 +185,13 @@
         <div class="section-head">
           <span class="eyebrow">Everything in one calm place</span>
           <h2>Made for the whole hormonal journey</h2>
-          <p class="lede">From your first cycle through perimenopause and beyond — Verity meets you where you are, and grows with you.</p>
+          <p class="lede">From regular cycles through perimenopause, menopause and beyond — Verity meets you where you are, and grows with you.</p>
         </div>
         <div class="cards">
           <article class="card">
             <div class="ico ico-lav" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.7 0-3 .8-4.5 2.5C10.5 3.8 9.2 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg></div>
             <h3>Cycle &amp; symptom tracking</h3>
-            <p>Log energy, mood, sleep, symptoms and more in seconds — with a picture that makes sense at a glance.</p>
+            <p>Log energy, mood, sleep and symptoms in seconds. A gentle weekly check-in asks about any bleeding, and Verity shows your period dates and the gaps between them, not a countdown.</p>
           </article>
           <article class="card">
             <div class="ico ico-mint" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l.5.5.5-.5a5 5 0 0 1 7 7l-7 7a1 1 0 0 1-1 0Z"/><path d="m8 12 2 2 4-4"/></svg></div>
@@ -181,7 +201,7 @@
           <article class="card">
             <div class="ico ico-blush" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
             <h3>Ask Vera</h3>
-            <p>Clear, caveated answers to the questions women actually ask — free, and every one clinician-reviewed. Upgrade for live AI conversations.</p>
+            <p>Clear, caveated answers to the questions women actually ask — ready answers with cited sources, and live chat in your own words.</p>
           </article>
           <article class="card">
             <div class="ico ico-sage" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
@@ -213,52 +233,37 @@
           <span class="eyebrow">Meet your guide</span>
           <h2>Meet Vera</h2>
           <p class="lede">She's walked through midlife herself — and she knows the science. So Vera meets you as a knowing friend, never a clinician.</p>
-          <p class="muted">Every answer she gives is clinician-reviewed, honest about what the evidence does and doesn't say, and always points you back to your doctor for medical decisions. Vera helps you understand your body, notice your patterns, and walk into appointments prepared.</p>
+          <p class="muted">Tap-answers cite published guidelines, are honest about what the evidence does and doesn't say, and always point you back to your doctor. Live Ask Vera is AI — it can be wrong. Vera helps you understand your body, notice your patterns, and walk into appointments prepared.</p>
           <div class="ask-vera-chip">
             <img class="avatar" src="assets/vera-avatar.webp" width="52" height="52" alt="" />
             <div>
               <strong>Ask Vera</strong>
-              <span>Clear, caveated answers to the questions women actually ask — free, and every one clinician-reviewed.</span>
+              <span>Clear, caveated answers to the questions women actually ask — ready answers with cited sources, and live chat in your own words.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ Pricing / tiers ============ -->
-    <section id="pricing">
+    <!-- ============ What's included ============ -->
+    <section id="included">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">Free to start, premium when you want more</span>
-          <h2>Two ways to use Verity</h2>
-          <p class="lede">Everything you need to understand your body is free. When you want to talk it through, Ask Vera AI is there.</p>
+          <span class="eyebrow">One app, everything included</span>
+          <h2>What's included</h2>
+          <p class="lede">Tracking, trends, your doctor report, and Ask Vera — ready answers on your device, and live chat in your own words. Everything listed here is included.</p>
         </div>
-        <div class="split">
-          <article class="card">
-            <span class="eyebrow eyebrow-teal">Free</span>
-            <h3>Track, see, understand</h3>
-            <ul style="list-style:none;margin:var(--s-md) 0 0;padding:0;">
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> Cycle, symptom, sleep &amp; HRT tracking</li>
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> Trends and insights in plain language</li>
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> Ask Vera — curated, clinician-reviewed answers, on your device</li>
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> A shareable report for your doctor</li>
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> No ads, no data selling</li>
-            </ul>
-            <p class="tiny" style="margin-top:var(--s-md);">Free — no account required.</p>
-          </article>
-          <article class="card" style="border:2px solid var(--plum);position:relative;">
-            <span style="position:absolute;top:-13px;left:var(--s-lg);background:var(--plum);color:#fff;font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:var(--r-pill);">Premium</span>
-            <span class="eyebrow">Ask Vera AI</span>
-            <h3>A companion to talk it through</h3>
-            <ul style="list-style:none;margin:var(--s-md) 0 0;padding:0;">
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--plum);font-weight:500;">✦</span> Everything in Free, plus live Ask Vera AI conversations</li>
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--plum);font-weight:500;">✦</span> Grounded in Verity's clinician-reviewed women's-health library</li>
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--plum);font-weight:500;">✦</span> Warm, careful, cited answers — never alarmist</li>
-              <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--plum);font-weight:500;">✦</span> Ask follow-ups and continue a topic across days</li>
-            </ul>
-            <p class="tiny" style="margin-top:var(--s-md);">A premium upgrade. Your question is sent — only with your consent and without identifying details — to answer it, grounded in vetted content and never used to train AI.</p>
-          </article>
-        </div>
+        <article class="card">
+          <ul style="list-style:none;margin:0;padding:0;">
+            <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> Cycle, symptom, sleep &amp; HRT tracking</li>
+            <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> Trends and insights in plain language</li>
+            <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> Ask Vera — ready answers with cited sources, on your device</li>
+            <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> Live Ask Vera — type a question in your own words (15 a month; an account and extra consent)</li>
+            <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> A shareable report for your doctor</li>
+            <li style="display:flex;gap:10px;padding:7px 0;"><span aria-hidden="true" style="color:var(--teal);font-weight:500;">✓</span> No ads, no data selling</li>
+          </ul>
+          <p class="tiny" style="margin-top:var(--s-md);">Core tracking needs no account. Live answers are AI-generated and can be wrong. We never use your health data to train any AI.</p>
+        </article>
       </div>
     </section>
 
@@ -273,10 +278,10 @@
         </div>
         <div class="panel">
           <ul>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No ads, no trackers, no selling your data — ever.</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Free Ask Vera answers on your device. Premium Ask Vera AI only sends your question — with your consent, no identifying details — to answer it.</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No ads, no selling your data — ever.</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Ready Ask Vera answers stay on your device. Live Ask Vera sends your question, plus a little context like your age, life stage and HRT, so the answer fits you. Never your name or email, and only with your consent.</li>
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Encrypted on the way to us, and served only to your own account.</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Delete your account in one tap — a real, permanent erase.</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Delete your account and data from Settings. It's a real, permanent erase.</li>
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Export your data anytime, in a format you can keep.</li>
           </ul>
           <p class="tiny" style="margin-top:var(--s-md);">Read our full <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
@@ -333,9 +338,9 @@
     <!-- ============ CTA band / waitlist anchor ============ -->
     <section class="cta-band" id="waitlist">
       <div class="wrap">
-        <span class="eyebrow" style="color:rgba(255,255,255,0.9);">Launching soon</span>
+        <span class="eyebrow" style="color:rgba(255,255,255,0.9);">Coming soon to Android</span>
         <h2>Be first through the door</h2>
-        <p class="lede" style="color:rgba(255,255,255,0.92);max-width:46ch;margin-inline:auto;">Join the waitlist and we'll let you know the moment Verity is ready — plus the occasional note on what we're building. That's it.</p>
+        <p class="lede" style="color:rgba(255,255,255,0.92);max-width:46ch;margin-inline:auto;">Join the waitlist and we'll tell you the moment Verity is on Google Play — plus the occasional note on what we're building. That's it.</p>
         <form class="waitlist" id="waitlistBottom" novalidate>
           <label class="visually-hidden" for="emailBottom">Email address</label>
           <div class="waitlist-row">
@@ -357,12 +362,12 @@
         </div>
         <div class="faq">
           <details>
-            <summary>Is Verity free?</summary>
-            <div><p>Yes. The free tier gives you all the tracking, trends, your doctor report, and Ask Vera's curated, clinician-reviewed answers. Verity Premium adds Ask Vera AI — live, grounded conversations — as a subscription. The core app stays free.</p></div>
+            <summary>Do I pay for Verity?</summary>
+            <div><p>No. Tracking, trends, your doctor report, ready Ask Vera answers, and live Ask Vera (15 questions a month) are included. Everything listed here is included.</p></div>
           </details>
           <details>
             <summary>Is Vera a doctor?</summary>
-            <div><p>No. Vera is a companion that shares general, clinician-reviewed information — not medical advice, diagnosis or treatment. Always consult a qualified healthcare professional for medical decisions.</p></div>
+            <div><p>No. Vera is a companion that shares general information from cited sources — not medical advice, diagnosis or treatment. Live Ask Vera is AI and can be wrong. Always consult a qualified healthcare professional for medical decisions.</p></div>
           </details>
           <details>
             <summary>Where is my data stored?</summary>
@@ -370,15 +375,15 @@
           </details>
           <details>
             <summary>Does Verity send my data to an AI?</summary>
-            <div><p>Only if you choose Premium. The free Ask Vera answers from a clinician-reviewed library right on your device — no AI, nothing sent. With Verity Premium, Ask Vera AI sends the question you ask — with your consent and without identifying details — to an AI provider, which answers grounded in Verity's vetted women's-health library. We never use your health data to train any AI.</p></div>
+            <div><p>Only if you use live Ask Vera. Ready Ask Vera answers come from a cited library right on your device — no AI, nothing sent. Live Ask Vera sends your question and a little context (age, life stage, HRT, recent symptoms, how you've been eating) to an AI provider, with your consent. Never your name or email. Live answers are AI-generated and can be wrong. We never use your health data to train any AI.</p></div>
           </details>
           <details>
             <summary>Do I need an account to use it?</summary>
             <div><p>No. Verity works offline in local-only mode. An account is optional and only needed if you want to sync across devices or back up your data.</p></div>
           </details>
           <details>
-            <summary>When does it launch?</summary>
-            <div><p>We're in the final stages of building. Join the waitlist and you'll be among the first to know when Verity is available on the App Store and Google Play.</p></div>
+            <summary>Where can I get it?</summary>
+            <div><p>On iPhone, Verity is on the App Store now: <a href="https://apps.apple.com/app/id6809762705">download Verity</a>. The Android app is coming to Google Play. Join the waitlist and we'll email you when it's ready.</p></div>
           </details>
           <details>
             <summary>Who is Verity for?</summary>
@@ -408,7 +413,7 @@
             <img class="brand-mark" src="favicon-96.png" width="26" height="26" alt="" />
             <span class="wordmark">Verity</span>
           </a>
-          <p>Your body's truth, in your hands. A hormonal-health companion for every life stage.</p>
+          <p>Your body's truth, in your hands. A hormonal-health companion for midlife and the years around it.</p>
           <div class="footer-social">
             <a class="social-link" href="https://www.linkedin.com/company/verity-women/" target="_blank" rel="noopener noreferrer" aria-label="Verity on LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
@@ -418,11 +423,12 @@
         </div>
         <nav class="footer-links" aria-label="Footer">
           <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
+          <a href="#included">Included</a>
           <a href="#privacy">Privacy</a>
           <a href="#faq">FAQ</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms</a>
+          <a href="/help/">Get help now</a>
         </nav>
       </div>
       <div class="footer-bottom">
@@ -434,6 +440,6 @@
   <style>
     .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
   </style>
-  <script src="script.js?v=20260806-waitlist" defer></script>
+  <script src="script.js?v=20261018" defer></script>
 </body>
 </html>
