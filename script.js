@@ -1,4 +1,4 @@
-/* Verity website — waitlist + nav. No dependencies, progressive-enhancement. */
+/* Verity website — App Store links, Android email list + nav. No dependencies, progressive-enhancement. */
 (function () {
   "use strict";
 
@@ -68,6 +68,7 @@
     if (el.closest("header") || el.closest(".site-header") || el.closest("nav")) return "header";
     if (el.closest(".hero") || el.closest("#hero")) return "hero";
     if (el.closest(".cta-band") || el.closest("#waitlist")) return "footer_cta";
+    if (el.closest("#faq")) return "faq";
     if (el.closest("footer") || el.closest(".site-footer")) return "footer";
     if (el.hasAttribute("data-waitlist") || el.closest("[data-waitlist]")) return "store_badge";
     return "page";
@@ -78,7 +79,7 @@
     if (!form) return;
     var input = document.getElementById(inputId);
     var msg = document.getElementById(msgId);
-    var defaultBtnLabel = "Join the waitlist";
+    var defaultBtnLabel = "Email me";
 
     function say(text, state) {
       if (!msg) return;
@@ -137,7 +138,7 @@
         .then(function (data) {
           if (data && data.already) {
             say(
-              "You're already on the waitlist — we'll email you at launch. No need to join again.",
+              "You're already on the list. We'll email you when Verity is on Google Play.",
               "ok"
             );
             setButton(btn, "Already on the list", false);
@@ -181,7 +182,7 @@
   // --- CTA click tracking (anchors / badges; form submit → generate_lead) --
   document.addEventListener("click", function (e) {
     var el = e.target && e.target.closest
-      ? e.target.closest('a[href="#waitlist"], a[href="#waitlistTop"], [data-waitlist], a.btn-primary, a.store-badge, a.store-badge-apple')
+      ? e.target.closest('a[href*="apps.apple.com"], a[href="#waitlist"], a[href="#waitlistTop"], [data-waitlist], a.btn-primary, a.store-badge, a.store-badge-apple')
       : null;
     if (!el) return;
     if (el.closest && el.closest("form")) return;
@@ -189,7 +190,10 @@
 
     var href = el.getAttribute("href") || "";
     var ctaId;
-    if (el.classList && el.classList.contains("store-badge-apple")) {
+    // Every App Store link (hero/band badges, nav "Get the app", FAQ link) is
+    // cta_id "app_store"; cta_location tells them apart.
+    if (href.indexOf("apps.apple.com") !== -1 ||
+        (el.classList && el.classList.contains("store-badge-apple"))) {
       ctaId = "app_store";
     } else if (el.hasAttribute("data-waitlist") || el.closest("[data-waitlist]")) {
       ctaId = "store_badge";
@@ -206,11 +210,10 @@
   });
 
 
-  // --- "Coming soon" store badge ------------------------------------------
-  // The iPhone app is live (the App Store badge is a plain link). Android isn't
-  // yet, so the Google Play badge sends the user to the hero waitlist form and
-  // focuses the email field. href="#waitlistTop" is the no-JS fallback. Swap it
-  // for the real Play URL once the Android app ships and remove this handler.
+  // --- Any [data-waitlist] link → focus the Android email field ------------
+  // No element on the page carries data-waitlist since the 2026-10-18 layout
+  // (the Google Play badge is gone), so this loop finds nothing and is a no-op.
+  // Kept so a future "On Android?" link can opt in with data-waitlist.
   var badges = document.querySelectorAll("[data-waitlist]");
   var emailTop = document.getElementById("emailTop");
   Array.prototype.forEach.call(badges, function (badge) {

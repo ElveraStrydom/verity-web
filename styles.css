@@ -593,3 +593,88 @@ h3 { font-size: 1.25rem; }
   .trust-grid { grid-template-columns: 1fr; }
   .footer-grid { flex-direction: column; }
 }
+
+/* =========================================================================
+   "Get the app" layout (App Store live; Android email list). Added 2026-10-18.
+   App Store badge = Apple's unmodified artwork, 56px tall (min 40px), with at
+   least 14px (a quarter of its height) clear space on every side. It is the
+   one main action; the Android email list is visibly quieter.
+   ========================================================================= */
+
+/* Nav "Get the app": a full 48px tap target */
+.nav-links a.nav-cta { min-height: 48px; padding: 0 20px; }
+
+/* Secondary button: outlined, for the Android list */
+.btn-secondary { background: transparent; color: var(--plum); border-color: var(--plum); }
+.btn-secondary:hover { background: var(--plum-light); }
+@media (prefers-color-scheme: dark) {
+  .btn-secondary { color: var(--eyebrow-plum); border-color: var(--eyebrow-plum); }
+  .btn-secondary:hover { background: var(--surface-high); }
+}
+
+/* Hero: get the app */
+.get-app { margin-top: var(--s-xs); }
+.get-label {
+  margin: 0 0 var(--s-md); /* 16px ≥ the 14px clear space above the badge */
+  font-size: 1.0625rem; font-weight: 500; color: var(--text-primary);
+}
+.get-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-lg); }
+.qr { display: flex; align-items: center; gap: var(--s-md); margin: 0; }
+.qr-tile {
+  display: block; flex: none; background: #FFFFFF; /* QR must stay dark-on-white in dark mode */
+  padding: 0; border-radius: var(--r-sm); border: 1px solid var(--border); overflow: hidden;
+}
+/* 96px ≈ 2.5cm on a desktop screen (≥2cm scans reliably). The SVG carries its own
+   4-module white quiet zone, so the tile needs no extra padding. */
+.qr-tile img { display: block; width: 96px; height: 96px; }
+.qr figcaption { max-width: 9.5em; font-size: 1rem; line-height: 1.4; color: var(--text-second); }
+
+/* Hero: Android block — quieter than the App Store row */
+.android {
+  margin-top: var(--s-xl); padding-top: var(--s-lg);
+  border-top: 1px solid var(--border);
+  max-width: 460px;
+}
+.android-line { margin: 0; font-size: 1rem; color: var(--text-second); }
+.android-line strong { font-weight: 500; color: var(--text-primary); }
+.android .waitlist { margin-top: var(--s-sm); }
+.hero .field { border-color: var(--text-light); } /* field edge ≥3:1 in both modes */
+.form-note { margin: var(--s-sm) 0 0; font-size: 0.9375rem; line-height: 1.45; color: var(--text-second); }
+
+/* Bottom band: get Verity */
+.cta-band .band-eyebrow {
+  font-size: 0.9375rem; letter-spacing: 0.06em; color: #FFFFFF; margin-bottom: var(--s-sm);
+}
+.cta-band h2 { margin-bottom: var(--s-lg); }
+.band-get {
+  display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: var(--s-lg); padding: var(--s-lg) var(--s-xl);
+  background: #FFFFFF; border-radius: var(--r-card); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.band-get .qr-tile { border-color: #E8E0F0; }
+.band-get .qr figcaption { color: #4A4152; text-align: left; } /* dark ink on the white card */
+.cta-band .band-android { margin: var(--s-xl) auto 0; color: #FFFFFF; }
+.cta-band .band-android strong { color: #FFFFFF; }
+.cta-band .waitlist { margin: var(--s-sm) auto 0; }
+.cta-band .waitlist-row { justify-content: center; } /* a wrapped button stays centred */
+.cta-band .btn-secondary { background: transparent; color: #FFFFFF; border-color: #FFFFFF; }
+.cta-band .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); }
+.cta-band .form-note { color: #FFFFFF; }
+.cta-band .field::placeholder { color: #6E6377; } /* the band field is white in both modes; dark-mode text-light was 2.9:1 on it */
+
+/* Apple credit line */
+.footer-bottom .credit { margin: var(--s-sm) 0 0; }
+
+/* Phones and tablets: she is already on the device, so no QR code. */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  .qr { display: none; }
+  .band-get { padding: var(--s-md) var(--s-lg); }
+}
+@media (max-width: 900px) {
+  /* Mobile hero order (hero-copy is display:contents above):
+     eyebrow → H1 → lede → "Free on iPhone" → badge → divider → Android → phone */
+  .get-app { margin-top: 0; }
+  .android { max-width: none; }
+  .nav-links.open a { min-height: 48px; display: inline-flex; align-items: center; }
+  .nav-links.open { gap: var(--s-xs); }
+}
