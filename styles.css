@@ -552,6 +552,10 @@ h3 { font-size: 1.25rem; }
   padding: var(--s-md) var(--s-lg); border-radius: 0 var(--r-md) var(--r-md) 0; margin: var(--s-md) 0;
   color: var(--text-second); font-size: 0.92rem;
 }
+/* Plain summary at the top of a legal section (Terms section 11): same box, but body-size
+   text in the primary colour so the summary stands out and is easy to read. */
+.callout-summary { color: var(--text-primary); font-size: 1rem; }
+.legal-body h3 { scroll-margin-top: 88px; }
 /* Placeholder text still to be completed before publishing. */
 .fillin {
   background: var(--fill-morning); color: var(--warning);
