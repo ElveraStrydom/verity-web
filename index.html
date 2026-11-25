@@ -32,7 +32,7 @@
     "@type": "MobileApplication",
     "name": "Verity",
     "applicationCategory": "HealthApplication",
-    "operatingSystem": "iOS",
+    "operatingSystem": "iOS, Android",
     "description": "A hormonal-health companion for women in midlife and the years around it: cycle, symptom, sleep and HRT tracking, trends, and guidance from cited sources.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "sameAs": [
@@ -99,7 +99,7 @@
           <p class="lede">Verity is a warm, private companion for tracking your cycle, symptoms, sleep and HRT — with clear trends and guidance from cited sources. No noise, no judgement, no ads.</p>
 
           <div class="get-app">
-            <p class="get-label">Free on iPhone</p>
+            <p class="get-label">Free on iPhone and Android</p>
             <div class="get-row">
               <a class="store-badge-apple" href="https://apps.apple.com/app/id6809762705">
                 <img src="/assets/app-store-badge.svg" width="168" height="56" alt="Download on the App Store" />
@@ -111,6 +111,12 @@
             </div>
           </div>
 
+          <!-- GOOGLE PLAY - TO DO ON LAUNCH DAY (no Play listing URL exists yet, so no button is added here).
+               When the listing is live: (1) add the official Google Play badge image to /assets/,
+               (2) put the link below next to the App Store badge above, with the real URL,
+               (3) replace this whole "android" block (the "coming to Google Play" line and the email form).
+               <a class="store-badge-play" href="PLAY_STORE_URL_GOES_HERE"><img src="/assets/google-play-badge.svg" width="189" height="56" alt="Get it on Google Play" /></a>
+               Until that is done, the page says "Free on iPhone and Android" above a line that says Android is still coming: do not publish like that. -->
           <div class="android">
             <p class="android-line" id="androidTop"><strong>On Android?</strong> Verity is coming to Google Play.</p>
             <form class="waitlist" id="waitlistTop" novalidate aria-labelledby="androidTop">
@@ -269,7 +275,7 @@
         <div class="section-head">
           <span class="eyebrow">One app, everything included</span>
           <h2>What's included</h2>
-          <p class="lede">Tracking, trends, your doctor report, and Ask Vera — ready answers on your device, and live chat in your own words. Everything listed here is included.</p>
+          <p class="lede">Tracking, trends, your doctor report, and Ask Vera — ready answers on your device, and live chat in your own words.</p>
         </div>
         <article class="card">
           <ul style="list-style:none;margin:0;padding:0;">
@@ -356,7 +362,7 @@
     <!-- ============ CTA band: get the app ============ -->
     <section class="cta-band" id="waitlist">
       <div class="wrap">
-        <span class="eyebrow band-eyebrow">Free on iPhone</span>
+        <span class="eyebrow band-eyebrow">Free on iPhone and Android</span>
         <h2>Get Verity</h2>
         <div class="band-get">
           <a class="store-badge-apple" href="https://apps.apple.com/app/id6809762705">
@@ -367,6 +373,8 @@
             <figcaption>Scan with your iPhone camera</figcaption>
           </figure>
         </div>
+        <!-- GOOGLE PLAY - TO DO ON LAUNCH DAY: same as the hero. Add the Play badge link beside the App Store badge above
+             (real URL needed), then remove the "coming to Google Play" line and the email form below. -->
         <p class="android-line band-android" id="androidBottom"><strong>On Android?</strong> Verity is coming to Google Play.</p>
         <form class="waitlist" id="waitlistBottom" novalidate aria-labelledby="androidBottom">
           <label class="visually-hidden" for="emailBottom">Email address</label>
@@ -389,8 +397,9 @@
         </div>
         <div class="faq">
           <details>
-            <summary>Do I pay for Verity?</summary>
-            <div><p>No. Tracking, trends, your doctor report, ready Ask Vera answers, and live Ask Vera (15 questions a month) are included. Everything listed here is included.</p></div>
+            <!-- Launch-day wording from Ruby (monetization). Exact words; no prices on this page. -->
+            <summary>Is Verity free?</summary>
+            <div><p>Yes, to download and use. Your logs, trends, the doctor report, the library, your support person and 15 questions to Vera a month are free and stay free. Verity Plus is an optional subscription for a Vera who remembers you.</p></div>
           </details>
           <details>
             <summary>Is Vera a doctor?</summary>
@@ -409,6 +418,8 @@
             <div><p>No. Verity works offline in local-only mode. An account is optional and only needed if you want to sync across devices or back up your data.</p></div>
           </details>
           <details>
+            <!-- GOOGLE PLAY - TO DO ON LAUNCH DAY: this answer still says Android is "coming". Once the Play listing URL exists,
+                 link it here and drop the "Leave your email" sentence. Not reworded now: no URL, and no approved words yet. -->
             <summary>Where can I get it?</summary>
             <div><p>On iPhone, Verity is on the App Store now: <a href="https://apps.apple.com/app/id6809762705">download Verity</a>. The Android app is coming to Google Play. Leave your email and we'll tell you when it's ready.</p></div>
           </details>
