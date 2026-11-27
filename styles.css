@@ -523,10 +523,12 @@ h3 { font-size: 1.25rem; }
   border: 1px solid var(--separator); border-radius: var(--r-card);
   background: var(--surface-high); padding: var(--s-md);
 }
-.legal-toc h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin: 0 0 var(--s-sm); }
-.legal-toc ol { margin: 0; padding-left: 1.1em; }
-.legal-toc li { margin: var(--s-xs) 0; }
-.legal-toc a { color: var(--text-second); font-size: 0.9rem; }
+/* Contents list: the headings already carry their numbers, so the list's own numbering is off
+   (it showed "1. 1. Who we are"). Rows are at least 44px tall to tap, text 16px at full contrast. */
+.legal-toc h2 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 0 0 var(--s-xs); }
+.legal-toc ol { margin: 0; padding: 0; list-style: none; }
+.legal-toc li { margin: 0; }
+.legal-toc a { display: flex; align-items: center; min-height: 44px; padding: var(--s-xs) 0; color: var(--text-primary); font-size: 1rem; line-height: 1.35; }
 .legal-body { max-width: 720px; }
 .legal-body h1 { margin-bottom: var(--s-sm); }
 .legal-body h2 { font-size: 1.35rem; margin-top: var(--s-xl); scroll-margin-top: 88px; }
@@ -536,11 +538,12 @@ h3 { font-size: 1.25rem; }
 .legal-body li { margin: var(--s-xs) 0; }
 .legal-meta {
   background: var(--fill-lavender); color: var(--ink-on-fill);
-  border-radius: var(--r-md); padding: var(--s-md) var(--s-lg); margin-bottom: var(--s-lg); font-size: 0.9rem;
+  border-radius: var(--r-md); padding: var(--s-md) var(--s-lg); margin-bottom: var(--s-lg); font-size: 1rem;
 }
-.legal-body a { text-decoration: underline; }
+/* --eyebrow-plum: same plum as links in light; a light lilac in dark, where plain --plum is 1.9:1 on the dark page (2026-11-27). */
+.legal-body a { text-decoration: underline; color: var(--eyebrow-plum); }
 .legal-table-wrap { overflow-x: auto; margin: var(--s-md) 0; }
-.legal-body table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.legal-body table { width: 100%; border-collapse: collapse; font-size: 1rem; }
 .legal-body th, .legal-body td {
   text-align: left; vertical-align: top;
   border-bottom: 1px solid var(--border, #e6dcec);
@@ -552,12 +555,32 @@ h3 { font-size: 1.25rem; }
   padding: var(--s-md) var(--s-lg); border-radius: 0 var(--r-md) var(--r-md) 0; margin: var(--s-md) 0;
   color: var(--text-second); font-size: 0.92rem;
 }
+/* Plain summary at the top of a legal section (Terms section 11): same box, but body-size
+   text in the primary colour so the summary stands out and is easy to read. */
+.callout-summary { color: var(--text-primary); font-size: 1rem; }
+.legal-body h3 { scroll-margin-top: 88px; }
 /* Placeholder text still to be completed before publishing. */
 .fillin {
   background: var(--fill-morning); color: var(--warning);
   padding: 0 4px; border-radius: 4px; font-weight: 500; white-space: nowrap;
 }
 @media (prefers-color-scheme: dark) { .fillin { color: #FFCC80; } }
+/* Legal tables on a phone: three columns of long text do not fit 360px, so each row becomes a
+   card and each cell carries its column name (data-label). The table keeps explicit ARIA roles
+   in the HTML, so a screen reader still reads it as a table. Added 2026-11-27. */
+@media (max-width: 560px) {
+  .legal-table--stack thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+  .legal-table--stack, .legal-table--stack tbody, .legal-table--stack tr, .legal-table--stack td { display: block; width: 100%; }
+  .legal-table--stack tr { border-bottom: 1px solid var(--border, #e6dcec); padding: var(--s-sm) 0; }
+  .legal-body .legal-table--stack td { border-bottom: 0; padding: var(--s-xs) 0; }
+  .legal-table--stack td::before {
+    content: attr(data-label); display: block;
+    font-weight: 600; color: var(--text-second);
+  }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
