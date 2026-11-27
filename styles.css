@@ -536,11 +536,12 @@ h3 { font-size: 1.25rem; }
 .legal-body li { margin: var(--s-xs) 0; }
 .legal-meta {
   background: var(--fill-lavender); color: var(--ink-on-fill);
-  border-radius: var(--r-md); padding: var(--s-md) var(--s-lg); margin-bottom: var(--s-lg); font-size: 0.9rem;
+  border-radius: var(--r-md); padding: var(--s-md) var(--s-lg); margin-bottom: var(--s-lg); font-size: 1rem;
 }
-.legal-body a { text-decoration: underline; }
+/* --eyebrow-plum: same plum as links in light; a light lilac in dark, where plain --plum is 1.9:1 on the dark page (2026-11-27). */
+.legal-body a { text-decoration: underline; color: var(--eyebrow-plum); }
 .legal-table-wrap { overflow-x: auto; margin: var(--s-md) 0; }
-.legal-body table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.legal-body table { width: 100%; border-collapse: collapse; font-size: 1rem; }
 .legal-body th, .legal-body td {
   text-align: left; vertical-align: top;
   border-bottom: 1px solid var(--border, #e6dcec);
@@ -562,6 +563,22 @@ h3 { font-size: 1.25rem; }
   padding: 0 4px; border-radius: 4px; font-weight: 500; white-space: nowrap;
 }
 @media (prefers-color-scheme: dark) { .fillin { color: #FFCC80; } }
+/* Legal tables on a phone: three columns of long text do not fit 360px, so each row becomes a
+   card and each cell carries its column name (data-label). The table keeps explicit ARIA roles
+   in the HTML, so a screen reader still reads it as a table. Added 2026-11-27. */
+@media (max-width: 560px) {
+  .legal-table--stack thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+  .legal-table--stack, .legal-table--stack tbody, .legal-table--stack tr, .legal-table--stack td { display: block; width: 100%; }
+  .legal-table--stack tr { border-bottom: 1px solid var(--border, #e6dcec); padding: var(--s-sm) 0; }
+  .legal-body .legal-table--stack td { border-bottom: 0; padding: var(--s-xs) 0; }
+  .legal-table--stack td::before {
+    content: attr(data-label); display: block;
+    font-weight: 600; color: var(--text-second);
+  }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
