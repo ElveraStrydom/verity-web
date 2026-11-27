@@ -523,10 +523,12 @@ h3 { font-size: 1.25rem; }
   border: 1px solid var(--separator); border-radius: var(--r-card);
   background: var(--surface-high); padding: var(--s-md);
 }
-.legal-toc h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin: 0 0 var(--s-sm); }
-.legal-toc ol { margin: 0; padding-left: 1.1em; }
-.legal-toc li { margin: var(--s-xs) 0; }
-.legal-toc a { color: var(--text-second); font-size: 0.9rem; }
+/* Contents list: the headings already carry their numbers, so the list's own numbering is off
+   (it showed "1. 1. Who we are"). Rows are at least 44px tall to tap, text 16px at full contrast. */
+.legal-toc h2 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 0 0 var(--s-xs); }
+.legal-toc ol { margin: 0; padding: 0; list-style: none; }
+.legal-toc li { margin: 0; }
+.legal-toc a { display: flex; align-items: center; min-height: 44px; padding: var(--s-xs) 0; color: var(--text-primary); font-size: 1rem; line-height: 1.35; }
 .legal-body { max-width: 720px; }
 .legal-body h1 { margin-bottom: var(--s-sm); }
 .legal-body h2 { font-size: 1.35rem; margin-top: var(--s-xl); scroll-margin-top: 88px; }
