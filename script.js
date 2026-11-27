@@ -202,7 +202,7 @@
     } else if (href === "#waitlistTop") {
       ctaId = "waitlist_top_anchor";
     } else if (el.hasAttribute("data-social")) {
-      // Footer social links: cta_id "social_facebook" / "_instagram" / "_linkedin" / "_x"
+      // Footer social links: cta_id "social_facebook" / "_instagram" / "_linkedin" / "_x" / "_youtube"
       ctaId = "social_" + el.getAttribute("data-social");
     } else if (el.classList && el.classList.contains("btn-primary")) {
       ctaId = "primary_cta";

@@ -507,6 +507,8 @@ h3 { font-size: 1.25rem; }
 }
 .social-icon svg { width: 24px; height: 24px; flex-shrink: 0; }
 .social-icon--linkedin { color: #0A66C2; }
+/* Five icons: tighten the gap on very narrow phones so the row does not orphan one. */
+@media (max-width: 359px) { .social-icons { gap: 8px; } }
 .social-icon:hover { background: var(--plum-light); text-decoration: none; }
 .social-icon:focus-visible { outline: 3px solid var(--plum-mid); outline-offset: 2px; }
 @media (prefers-color-scheme: dark) {
